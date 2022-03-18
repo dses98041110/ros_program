@@ -1,0 +1,8 @@
+prefix=/home/yu/catkin_ws/devel
+
+Name: subscriber_mini_bot
+Description: Description of subscriber_mini_bot
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

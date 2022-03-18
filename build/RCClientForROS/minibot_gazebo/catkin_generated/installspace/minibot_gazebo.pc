@@ -1,0 +1,8 @@
+prefix=/home/yu/catkin_ws/install
+
+Name: minibot_gazebo
+Description: Description of minibot_gazebo
+Version: 0.1.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

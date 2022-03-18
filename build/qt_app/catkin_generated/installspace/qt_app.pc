@@ -1,0 +1,8 @@
+prefix=/home/yu/catkin_ws/install
+
+Name: qt_app
+Description: Description of qt_app
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

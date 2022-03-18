@@ -1,0 +1,8 @@
+prefix=/home/yu/catkin_ws/install
+
+Name: minibot_support
+Description: Description of minibot_support
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

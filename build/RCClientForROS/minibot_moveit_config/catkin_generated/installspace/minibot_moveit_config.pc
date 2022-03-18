@@ -1,0 +1,8 @@
+prefix=/home/yu/catkin_ws/install
+
+Name: minibot_moveit_config
+Description: Description of minibot_moveit_config
+Version: 0.3.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
