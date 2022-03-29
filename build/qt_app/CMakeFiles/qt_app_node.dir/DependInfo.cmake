@@ -16,6 +16,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/yu/catkin_ws/src/qt_app/src/Pawn.cpp" "/home/yu/catkin_ws/build/qt_app/CMakeFiles/qt_app_node.dir/src/Pawn.cpp.o"
   "/home/yu/catkin_ws/src/qt_app/src/Piece.cpp" "/home/yu/catkin_ws/build/qt_app/CMakeFiles/qt_app_node.dir/src/Piece.cpp.o"
   "/home/yu/catkin_ws/src/qt_app/src/Queen.cpp" "/home/yu/catkin_ws/build/qt_app/CMakeFiles/qt_app_node.dir/src/Queen.cpp.o"
+  "/home/yu/catkin_ws/src/qt_app/src/RobotThread.cpp" "/home/yu/catkin_ws/build/qt_app/CMakeFiles/qt_app_node.dir/src/RobotThread.cpp.o"
   "/home/yu/catkin_ws/src/qt_app/src/Rook.cpp" "/home/yu/catkin_ws/build/qt_app/CMakeFiles/qt_app_node.dir/src/Rook.cpp.o"
   "/home/yu/catkin_ws/src/qt_app/src/main.cpp" "/home/yu/catkin_ws/build/qt_app/CMakeFiles/qt_app_node.dir/src/main.cpp.o"
   "/home/yu/catkin_ws/src/qt_app/src/mainwindow.cpp" "/home/yu/catkin_ws/build/qt_app/CMakeFiles/qt_app_node.dir/src/mainwindow.cpp.o"

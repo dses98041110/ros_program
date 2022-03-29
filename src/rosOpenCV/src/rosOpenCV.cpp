@@ -101,18 +101,15 @@ int main(int argc, char** argv)
 
 
 
-		while (key != 'q') {
-
-			if (zed.grab(runtime_parameters) == ERROR_CODE::SUCCESS) {
-			    
-			    // Retrieve the left image, depth image in half-resolution
-
+		while (ros::ok()) {
+			if (zed.grab(runtime_parameters) == ERROR_CODE::SUCCESS) {		  
 
 
 			    // Display image and depth using cv:Mat which share sl:Mat data
-			    //cv::imshow("Image", image_ocv);
+			    //zed.retrieveImage(image_zed, VIEW::LEFT, MEM::CPU, new_image_size);
+			    //cv::imshow("Image", result);
 
-
+			
 			    // Handle key event
 			    //std::cout<<pt.x<<'\t'<<pt.y<<std::endl; 
 			    
@@ -130,13 +127,17 @@ int main(int argc, char** argv)
 				}
 
 			}
-			key = cv::waitKey(10);
 
+			if(key == 'q'){
+				break;
+			}
+			key = cv::waitKey(10);
+			ros::spinOnce();	
 		}
 	
 
 	zed.close();
-	ros::spin();	
+
 	return 0;
 }
 
@@ -215,7 +216,7 @@ void imageSubtract(cv::Mat &image1, cv::Mat &image2)
 	cv::Mat previousGrayFrame = image2_gary.clone();
 	//图1减图2
 	cv::subtract(image1_gary, image2_gary, frameDifference, cv::Mat(), CV_16SC1);
-
+	//cv::imshow("frameDifference", frameDifference);
 	//取绝对值
 	absFrameDifferece = cv::abs(frameDifference);
 	//位深的改变
@@ -258,14 +259,14 @@ void imageSubtract(cv::Mat &image1, cv::Mat &image2)
 		mc[index] = cv::Point2f(mu[index].m10 / mu[index].m00, mu[index].m01 / mu[index].m00);
 		int range;
 		for(range=25;range<=200;range+=25){
-			if(mc[index].x<=range){
-				ss<<(char)(64+(range/25));
+			if(mc[index].y<=range){
+				ss<<(char)(73-(range/25));
 				break;
 			}
 		}
 		for(range=25;range<=200;range+=25){
-			if(mc[index].y<=range){
-				ss<<(char)(48+(range/25));
+			if(mc[index].x<=range){
+				ss<<(char)(57-(range/25));
 				break;
 			}
 		}

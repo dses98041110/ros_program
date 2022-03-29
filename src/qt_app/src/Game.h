@@ -8,6 +8,8 @@
 #include <ros/ros.h>
 #include "std_msgs/String.h"
 
+#include "RobotThread.h"
+
 typedef unsigned long long BitBoard;
 typedef struct CHESS_POSITION CHESS_POSITION;
 typedef struct HASHTABLE HASHTABLE;
@@ -67,7 +69,7 @@ class Game:public QGraphicsView
 public:
     //Constructors
     Game(QWidget *parent = 0);
-
+    Q_SLOT void updatePoseDisplay(int x1,int y1,int x2,int y2);
     ChessPiece *pieceToMove;
     ChessBox *collection[8][8];
     CHESS_POSITION chess_position;
@@ -89,7 +91,7 @@ public:
     void setTurn( QString value);
     void changeTurn();
     void blackMove(int current_position,int target_position);
-
+    void whiteMove(int x1,int y1,int x2,int y2);
     void gameOver();
     void removeAll();
 
@@ -226,7 +228,7 @@ private:
     BitBoard temp_move;
 
 //    CHESS_POSITION bestChessPosition;
-
+    RobotThread m_RobotThread;
 };
 
 

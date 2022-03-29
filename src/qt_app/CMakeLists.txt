@@ -39,7 +39,7 @@ set(SOURCES
 	src/King.cpp     
 	src/mainwindow.cpp
 	src/Queen.cpp
-	#src/RobotThread.cpp
+	src/RobotThread.cpp
 )
 
 set(FORMS

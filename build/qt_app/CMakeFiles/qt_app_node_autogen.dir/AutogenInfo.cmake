@@ -7,7 +7,7 @@ set(AM_CMAKE_CURRENT_SOURCE_DIR "/home/yu/catkin_ws/src/qt_app/")
 set(AM_CMAKE_CURRENT_BINARY_DIR "/home/yu/catkin_ws/build/qt_app/")
 set(AM_CMAKE_INCLUDE_DIRECTORIES_PROJECT_BEFORE "")
 set(AM_BUILD_DIR "/home/yu/catkin_ws/build/qt_app/qt_app_node_autogen")
-set(AM_SOURCES "/home/yu/catkin_ws/src/qt_app/src/Bishop.cpp;/home/yu/catkin_ws/src/qt_app/src/ChessBoard.cpp;/home/yu/catkin_ws/src/qt_app/src/ChessBox.cpp;/home/yu/catkin_ws/src/qt_app/src/ChessPiece.cpp;/home/yu/catkin_ws/src/qt_app/src/Game.cpp;/home/yu/catkin_ws/src/qt_app/src/King.cpp;/home/yu/catkin_ws/src/qt_app/src/Knight.cpp;/home/yu/catkin_ws/src/qt_app/src/Pawn.cpp;/home/yu/catkin_ws/src/qt_app/src/Piece.cpp;/home/yu/catkin_ws/src/qt_app/src/Queen.cpp;/home/yu/catkin_ws/src/qt_app/src/Rook.cpp;/home/yu/catkin_ws/src/qt_app/src/main.cpp;/home/yu/catkin_ws/src/qt_app/src/mainwindow.cpp")
+set(AM_SOURCES "/home/yu/catkin_ws/src/qt_app/src/Bishop.cpp;/home/yu/catkin_ws/src/qt_app/src/ChessBoard.cpp;/home/yu/catkin_ws/src/qt_app/src/ChessBox.cpp;/home/yu/catkin_ws/src/qt_app/src/ChessPiece.cpp;/home/yu/catkin_ws/src/qt_app/src/Game.cpp;/home/yu/catkin_ws/src/qt_app/src/King.cpp;/home/yu/catkin_ws/src/qt_app/src/Knight.cpp;/home/yu/catkin_ws/src/qt_app/src/Pawn.cpp;/home/yu/catkin_ws/src/qt_app/src/Piece.cpp;/home/yu/catkin_ws/src/qt_app/src/Queen.cpp;/home/yu/catkin_ws/src/qt_app/src/RobotThread.cpp;/home/yu/catkin_ws/src/qt_app/src/Rook.cpp;/home/yu/catkin_ws/src/qt_app/src/main.cpp;/home/yu/catkin_ws/src/qt_app/src/mainwindow.cpp")
 set(AM_HEADERS "")
 # Qt environment
 set(AM_QT_VERSION_MAJOR "5")

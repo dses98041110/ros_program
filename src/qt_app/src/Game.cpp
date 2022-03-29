@@ -7,7 +7,7 @@
  white =1;
  black =0;
  */
-Game::Game(QWidget *parent ):QGraphicsView(parent)
+Game::Game(QWidget *parent ):QGraphicsView(parent),m_RobotThread(0, 0,"chess_position")
 {
 
     //Making the Scene
@@ -21,7 +21,8 @@ Game::Game(QWidget *parent ):QGraphicsView(parent)
     setScene(gameScene);
 //    qDebug()<<bin<<(bool)!(0&0x80)<<(bool)!(4&0x80)<<(bool)!(-4&0x80);
     pieceToMove = NULL;
-
+    connect(&m_RobotThread,&RobotThread::newPose,this,&Game::updatePoseDisplay);
+    m_RobotThread.init();
     //test
 
 }
@@ -626,6 +627,7 @@ int Game::evaluateBoard(int pieceInSquare[])
 //-----------------------------------------------
 void Game::bitBoardUpdate(CHESS_POSITION *chess_position,int current_position,int target_position)
 {
+	qDebug()<<"bitBoardUpdate"<<current_position<<"t"<<target_position;
         //chess_position.piece
         chess_position->pieces^=mask[current_position];
         chess_position->pieces|=mask[target_position];
@@ -1281,6 +1283,26 @@ void Game::blackMove(int current_position,int target_position){
 
 }
 
+void Game::whiteMove(int x1,int y1,int x2,int y2){
+	qDebug()<<"updatePoseDisplay"<<x1<<y1<<x2<<y2;
+	pieceToMove=collection[x1][y1]->currentPiece;
+	ChessBox* targetBox=collection[x2][y2];
+	if(targetBox->getHasChessPiece()){
+		targetBox->currentPiece->setIsPlaced(false);
+		targetBox->currentPiece->setCurrentBox(NULL);
+		removeFromScene(targetBox->currentPiece);
+	}
+	pieceToMove->getCurrentBox()->setHasChessPiece(false);
+	pieceToMove->getCurrentBox()->currentPiece = NULL;
+	pieceToMove->getCurrentBox()->resetOriginalColor();
+
+	   //placePiece
+	   targetBox->placePiece(pieceToMove);
+	   //placePiece_end
+	pieceToMove=NULL;
+	qDebug()<<"whitePlaceDown";
+         bitBoardUpdate(&chess_position,8*(7-x1)+(7-y1),8*(7-x2)+(7-y2));
+}
 BitBoard Game::pieceInSquare2BitBoard(int pieceInSquare[])
 {
     int i;
@@ -1339,6 +1361,38 @@ BitBoard Game::createRotated_45Board(BitBoard bitboard)
     return rotated_45Board;
 }
 
+void Game::updatePoseDisplay(int x1,int y1,int x2,int y2){
+    
+    //collection[7-y1][x1]->setColor(Qt::red);
+    //collection[7-y2][x2]->setColor(Qt::blue);
+    ChessBox* targetBox=collection[7-y1][x1];
+    if((targetBox->getHasChessPiece())&&(targetBox->currentPiece->getSide()==1)){
+	whiteMove(7-y1,x1,7-y2,x2);
+    }
+    else{
+	whiteMove(7-y2,x2,7-y1,x1);
+    }
+        //minimx
+        hashTableList.clear();
+        int bestMove=87;
+        int bestPiece=87;
+        int maxValue=INT_MAX;
+        for(int i=0;i<64;i++){
+            if(chess_position.pieceInSquare[i]&0x8){
+                int score=minimax(chess_position.pieceInSquare,i,INT_MIN,INT_MAX,2);
+                if((score<=maxValue)&&(rand()%2+0)){
+                    maxValue=score;
+                    bestMove=bestBlackMoveTarget;
+                    bestPiece=i;
 
+                }
+            }
+        }
+        //minimx_end
+        blackMove(bestPiece,bestMove);
+        bitBoardUpdate(&chess_position,bestPiece,bestMove);
+
+	m_RobotThread.pubPose(bestPiece,bestMove);
+}
 
 

@@ -103,17 +103,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -134,6 +123,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,34 +168,94 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+RCClientForROS/subscriber_mini_bot/CMakeFiles/grc_moveit.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/grc_moveit.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/grc_moveit.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_lisp: RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+grc_moveit: RCClientForROS/subscriber_mini_bot/CMakeFiles/grc_moveit.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_lisp
+.PHONY : grc_moveit
 
 # fast build rule for target.
-geometry_msgs_generate_messages_lisp/fast:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-.PHONY : geometry_msgs_generate_messages_lisp/fast
+grc_moveit/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/grc_moveit.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/grc_moveit.dir/build
+.PHONY : grc_moveit/fast
 
 # Convenience name for target.
-RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_cpp: RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+control_msgs_generate_messages_nodejs: RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_cpp
+.PHONY : control_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
+control_msgs_generate_messages_nodejs/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_nodejs.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_nodejs.dir/build
+.PHONY : control_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+control_msgs_generate_messages_lisp: RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : control_msgs_generate_messages_lisp
+
+# fast build rule for target.
+control_msgs_generate_messages_lisp/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_lisp.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_lisp.dir/build
+.PHONY : control_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_eus.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_eus.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+control_msgs_generate_messages_eus: RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_eus.dir/rule
+
+.PHONY : control_msgs_generate_messages_eus
+
+# fast build rule for target.
+control_msgs_generate_messages_eus/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_eus.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_eus.dir/build
+.PHONY : control_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_cpp.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_cpp.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+control_msgs_generate_messages_cpp: RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : control_msgs_generate_messages_cpp
+
+# fast build rule for target.
+control_msgs_generate_messages_cpp/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_cpp.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_cpp.dir/build
+.PHONY : control_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_py: RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_py
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_py/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
+.PHONY : actionlib_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule:
@@ -213,6 +273,66 @@ actionlib_msgs_generate_messages_nodejs/fast:
 .PHONY : actionlib_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_lisp: RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_lisp
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_lisp/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
+.PHONY : actionlib_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_eus: RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_eus
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_eus/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build
+.PHONY : actionlib_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_py: RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+
+.PHONY : std_msgs_generate_messages_py
+
+# fast build rule for target.
+std_msgs_generate_messages_py/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_py.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_py.dir/build
+.PHONY : std_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_nodejs: RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : std_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+std_msgs_generate_messages_nodejs/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+.PHONY : std_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
 RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_py.dir/rule:
 	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_py.dir/rule
 .PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_py.dir/rule
@@ -228,139 +348,49 @@ control_msgs_generate_messages_py/fast:
 .PHONY : control_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-RCClientForROS/subscriber_mini_bot/CMakeFiles/industrial_msgs_generate_messages_py.dir/rule:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/industrial_msgs_generate_messages_py.dir/rule
-.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/industrial_msgs_generate_messages_py.dir/rule
+RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-industrial_msgs_generate_messages_py: RCClientForROS/subscriber_mini_bot/CMakeFiles/industrial_msgs_generate_messages_py.dir/rule
+rosgraph_msgs_generate_messages_py: RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 
-.PHONY : industrial_msgs_generate_messages_py
+.PHONY : rosgraph_msgs_generate_messages_py
 
 # fast build rule for target.
-industrial_msgs_generate_messages_py/fast:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/industrial_msgs_generate_messages_py.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/industrial_msgs_generate_messages_py.dir/build
-.PHONY : industrial_msgs_generate_messages_py/fast
+rosgraph_msgs_generate_messages_py/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+.PHONY : rosgraph_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_py: RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+rosgraph_msgs_generate_messages_nodejs: RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_py
+.PHONY : rosgraph_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
+rosgraph_msgs_generate_messages_nodejs/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
-.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
+RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-trajectory_msgs_generate_messages_nodejs: RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
+std_msgs_generate_messages_eus: RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
 
-.PHONY : trajectory_msgs_generate_messages_nodejs
+.PHONY : std_msgs_generate_messages_eus
 
 # fast build rule for target.
-trajectory_msgs_generate_messages_nodejs/fast:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build
-.PHONY : trajectory_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_eus: RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_eus
-
-# fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
-.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_lisp: RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_lisp
-
-# fast build rule for target.
-trajectory_msgs_generate_messages_lisp/fast:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build
-.PHONY : trajectory_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
-.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_eus: RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_eus
-
-# fast build rule for target.
-trajectory_msgs_generate_messages_eus/fast:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build
-.PHONY : trajectory_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_eus.dir/rule:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_eus: RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-
-.PHONY : actionlib_generate_messages_eus
-
-# fast build rule for target.
-actionlib_generate_messages_eus/fast:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_eus.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_eus.dir/build
-.PHONY : actionlib_generate_messages_eus/fast
-
-# Convenience name for target.
-RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
-.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_cpp: RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_cpp
-
-# fast build rule for target.
-trajectory_msgs_generate_messages_cpp/fast:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build
-.PHONY : trajectory_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_nodejs: RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-geometry_msgs_generate_messages_nodejs/fast:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
-.PHONY : geometry_msgs_generate_messages_nodejs/fast
+std_msgs_generate_messages_eus/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_eus.dir/build
+.PHONY : std_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule:
@@ -393,19 +423,229 @@ industrial_msgs_generate_messages_cpp/fast:
 .PHONY : industrial_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule
-.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule
+RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-control_msgs_generate_messages_nodejs: RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule
+roscpp_generate_messages_lisp: RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 
-.PHONY : control_msgs_generate_messages_nodejs
+.PHONY : roscpp_generate_messages_lisp
 
 # fast build rule for target.
-control_msgs_generate_messages_nodejs/fast:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_nodejs.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_nodejs.dir/build
-.PHONY : control_msgs_generate_messages_nodejs/fast
+roscpp_generate_messages_lisp/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+.PHONY : roscpp_generate_messages_lisp/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_nodejs: RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+geometry_msgs_generate_messages_nodejs/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+.PHONY : geometry_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_cpp: RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : std_msgs_generate_messages_cpp
+
+# fast build rule for target.
+std_msgs_generate_messages_cpp/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+.PHONY : std_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_lisp: RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_lisp
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_lisp/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/industrial_msgs_generate_messages_py.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/industrial_msgs_generate_messages_py.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/industrial_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+industrial_msgs_generate_messages_py: RCClientForROS/subscriber_mini_bot/CMakeFiles/industrial_msgs_generate_messages_py.dir/rule
+
+.PHONY : industrial_msgs_generate_messages_py
+
+# fast build rule for target.
+industrial_msgs_generate_messages_py/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/industrial_msgs_generate_messages_py.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/industrial_msgs_generate_messages_py.dir/build
+.PHONY : industrial_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_eus: RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_eus
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_eus/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+.PHONY : rosgraph_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+actionlib_msgs_generate_messages_cpp: RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : actionlib_msgs_generate_messages_cpp
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_cpp/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
+.PHONY : actionlib_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_cpp.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_cpp: RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
+
+.PHONY : actionlib_generate_messages_cpp
+
+# fast build rule for target.
+actionlib_generate_messages_cpp/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_cpp.dir/build
+.PHONY : actionlib_generate_messages_cpp/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_cpp: RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+
+.PHONY : roscpp_generate_messages_cpp
+
+# fast build rule for target.
+roscpp_generate_messages_cpp/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+.PHONY : roscpp_generate_messages_cpp/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_lisp: RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : std_msgs_generate_messages_lisp
+
+# fast build rule for target.
+std_msgs_generate_messages_lisp/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+.PHONY : std_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/planned_path_client.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/planned_path_client.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/planned_path_client.dir/rule
+
+# Convenience name for target.
+planned_path_client: RCClientForROS/subscriber_mini_bot/CMakeFiles/planned_path_client.dir/rule
+
+.PHONY : planned_path_client
+
+# fast build rule for target.
+planned_path_client/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/planned_path_client.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/planned_path_client.dir/build
+.PHONY : planned_path_client/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_cpp: RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_cpp
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_cpp/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_nodejs: RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+
+.PHONY : roscpp_generate_messages_nodejs
+
+# fast build rule for target.
+roscpp_generate_messages_nodejs/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+.PHONY : roscpp_generate_messages_nodejs/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_eus: RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+
+.PHONY : roscpp_generate_messages_eus
+
+# fast build rule for target.
+roscpp_generate_messages_eus/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_eus.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_eus.dir/build
+.PHONY : roscpp_generate_messages_eus/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_eus: RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_eus
+
+# fast build rule for target.
+geometry_msgs_generate_messages_eus/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+.PHONY : geometry_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 RCClientForROS/subscriber_mini_bot/CMakeFiles/industrial_msgs_generate_messages_eus.dir/rule:
@@ -453,6 +693,141 @@ industrial_msgs_generate_messages_nodejs/fast:
 .PHONY : industrial_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+trajectory_msgs_generate_messages_cpp: RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : trajectory_msgs_generate_messages_cpp
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_cpp/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build
+.PHONY : trajectory_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_py.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_py.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_py.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_py: RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_py.dir/rule
+
+.PHONY : roscpp_generate_messages_py
+
+# fast build rule for target.
+roscpp_generate_messages_py/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_py.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/roscpp_generate_messages_py.dir/build
+.PHONY : roscpp_generate_messages_py/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+trajectory_msgs_generate_messages_eus: RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
+
+.PHONY : trajectory_msgs_generate_messages_eus
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_eus/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build
+.PHONY : trajectory_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_eus.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_eus.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_eus: RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_eus.dir/rule
+
+.PHONY : actionlib_generate_messages_eus
+
+# fast build rule for target.
+actionlib_generate_messages_eus/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_eus.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_eus.dir/build
+.PHONY : actionlib_generate_messages_eus/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+trajectory_msgs_generate_messages_lisp: RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : trajectory_msgs_generate_messages_lisp
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_lisp/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build
+.PHONY : trajectory_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+trajectory_msgs_generate_messages_nodejs: RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : trajectory_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_nodejs/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build
+.PHONY : trajectory_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_cpp: RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_cpp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_cpp/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+.PHONY : geometry_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_lisp: RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_lisp/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+.PHONY : geometry_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_py: RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_py
+
+# fast build rule for target.
+geometry_msgs_generate_messages_py/fast:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+.PHONY : geometry_msgs_generate_messages_py/fast
+
+# Convenience name for target.
 RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_lisp.dir/rule:
 	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
 .PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
@@ -483,21 +858,6 @@ actionlib_generate_messages_nodejs/fast:
 .PHONY : actionlib_generate_messages_nodejs/fast
 
 # Convenience name for target.
-RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule
-.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-control_msgs_generate_messages_lisp: RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : control_msgs_generate_messages_lisp
-
-# fast build rule for target.
-control_msgs_generate_messages_lisp/fast:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_lisp.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_lisp.dir/build
-.PHONY : control_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
 RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_py.dir/rule:
 	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_py.dir/rule
 .PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_py.dir/rule
@@ -511,141 +871,6 @@ actionlib_generate_messages_py: RCClientForROS/subscriber_mini_bot/CMakeFiles/ac
 actionlib_generate_messages_py/fast:
 	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_py.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_py.dir/build
 .PHONY : actionlib_generate_messages_py/fast
-
-# Convenience name for target.
-RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_cpp: RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_cpp
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_cpp/fast:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
-.PHONY : actionlib_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_eus: RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_eus
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_eus/fast:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build
-.PHONY : actionlib_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_lisp: RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_lisp
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_lisp/fast:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
-.PHONY : actionlib_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_py: RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_py
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_py/fast:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
-.PHONY : actionlib_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-RCClientForROS/subscriber_mini_bot/CMakeFiles/planned_path_client.dir/rule:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/planned_path_client.dir/rule
-.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/planned_path_client.dir/rule
-
-# Convenience name for target.
-planned_path_client: RCClientForROS/subscriber_mini_bot/CMakeFiles/planned_path_client.dir/rule
-
-.PHONY : planned_path_client
-
-# fast build rule for target.
-planned_path_client/fast:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/planned_path_client.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/planned_path_client.dir/build
-.PHONY : planned_path_client/fast
-
-# Convenience name for target.
-RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_cpp.dir/rule:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_cpp.dir/rule
-.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-control_msgs_generate_messages_cpp: RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : control_msgs_generate_messages_cpp
-
-# fast build rule for target.
-control_msgs_generate_messages_cpp/fast:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_cpp.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_cpp.dir/build
-.PHONY : control_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_eus.dir/rule:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_eus.dir/rule
-.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-control_msgs_generate_messages_eus: RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_eus.dir/rule
-
-.PHONY : control_msgs_generate_messages_eus
-
-# fast build rule for target.
-control_msgs_generate_messages_eus/fast:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_eus.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/control_msgs_generate_messages_eus.dir/build
-.PHONY : control_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-RCClientForROS/subscriber_mini_bot/CMakeFiles/grc_moveit.dir/rule:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/grc_moveit.dir/rule
-.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/grc_moveit.dir/rule
-
-# Convenience name for target.
-grc_moveit: RCClientForROS/subscriber_mini_bot/CMakeFiles/grc_moveit.dir/rule
-
-.PHONY : grc_moveit
-
-# fast build rule for target.
-grc_moveit/fast:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/grc_moveit.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/grc_moveit.dir/build
-.PHONY : grc_moveit/fast
-
-# Convenience name for target.
-RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_cpp.dir/rule:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-.PHONY : RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_cpp: RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-
-.PHONY : actionlib_generate_messages_cpp
-
-# fast build rule for target.
-actionlib_generate_messages_cpp/fast:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make RCClientForROS/subscriber_mini_bot/CMakeFiles/actionlib_generate_messages_cpp.dir/build
-.PHONY : actionlib_generate_messages_cpp/fast
 
 src/grc_moveit.o: src/grc_moveit.cpp.o
 
@@ -710,42 +935,57 @@ help:
 	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... install"
-	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... geometry_msgs_generate_messages_cpp"
+	@echo "... edit_cache"
+	@echo "... list_install_components"
+	@echo "... grc_moveit"
+	@echo "... control_msgs_generate_messages_nodejs"
+	@echo "... control_msgs_generate_messages_lisp"
+	@echo "... control_msgs_generate_messages_eus"
+	@echo "... control_msgs_generate_messages_cpp"
+	@echo "... actionlib_msgs_generate_messages_py"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
+	@echo "... actionlib_msgs_generate_messages_lisp"
+	@echo "... actionlib_msgs_generate_messages_eus"
+	@echo "... std_msgs_generate_messages_py"
+	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... control_msgs_generate_messages_py"
-	@echo "... industrial_msgs_generate_messages_py"
-	@echo "... geometry_msgs_generate_messages_py"
-	@echo "... trajectory_msgs_generate_messages_nodejs"
-	@echo "... geometry_msgs_generate_messages_eus"
-	@echo "... trajectory_msgs_generate_messages_lisp"
-	@echo "... trajectory_msgs_generate_messages_eus"
-	@echo "... actionlib_generate_messages_eus"
-	@echo "... trajectory_msgs_generate_messages_cpp"
-	@echo "... geometry_msgs_generate_messages_nodejs"
+	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... rosgraph_msgs_generate_messages_nodejs"
+	@echo "... std_msgs_generate_messages_eus"
 	@echo "... trajectory_msgs_generate_messages_py"
 	@echo "... industrial_msgs_generate_messages_cpp"
-	@echo "... control_msgs_generate_messages_nodejs"
-	@echo "... edit_cache"
+	@echo "... roscpp_generate_messages_lisp"
+	@echo "... geometry_msgs_generate_messages_nodejs"
+	@echo "... std_msgs_generate_messages_cpp"
+	@echo "... rosgraph_msgs_generate_messages_lisp"
+	@echo "... industrial_msgs_generate_messages_py"
+	@echo "... rosgraph_msgs_generate_messages_eus"
+	@echo "... actionlib_msgs_generate_messages_cpp"
+	@echo "... rebuild_cache"
+	@echo "... actionlib_generate_messages_cpp"
+	@echo "... roscpp_generate_messages_cpp"
+	@echo "... std_msgs_generate_messages_lisp"
+	@echo "... planned_path_client"
+	@echo "... rosgraph_msgs_generate_messages_cpp"
+	@echo "... roscpp_generate_messages_nodejs"
+	@echo "... roscpp_generate_messages_eus"
+	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... industrial_msgs_generate_messages_eus"
 	@echo "... industrial_msgs_generate_messages_lisp"
 	@echo "... industrial_msgs_generate_messages_nodejs"
+	@echo "... trajectory_msgs_generate_messages_cpp"
+	@echo "... roscpp_generate_messages_py"
+	@echo "... trajectory_msgs_generate_messages_eus"
+	@echo "... actionlib_generate_messages_eus"
+	@echo "... trajectory_msgs_generate_messages_lisp"
+	@echo "... trajectory_msgs_generate_messages_nodejs"
+	@echo "... geometry_msgs_generate_messages_cpp"
+	@echo "... geometry_msgs_generate_messages_lisp"
+	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... actionlib_generate_messages_lisp"
 	@echo "... test"
 	@echo "... actionlib_generate_messages_nodejs"
-	@echo "... control_msgs_generate_messages_lisp"
 	@echo "... actionlib_generate_messages_py"
-	@echo "... actionlib_msgs_generate_messages_cpp"
-	@echo "... actionlib_msgs_generate_messages_eus"
-	@echo "... actionlib_msgs_generate_messages_lisp"
-	@echo "... actionlib_msgs_generate_messages_py"
-	@echo "... planned_path_client"
-	@echo "... control_msgs_generate_messages_cpp"
-	@echo "... control_msgs_generate_messages_eus"
-	@echo "... list_install_components"
-	@echo "... grc_moveit"
-	@echo "... actionlib_generate_messages_cpp"
-	@echo "... rebuild_cache"
 	@echo "... src/grc_moveit.o"
 	@echo "... src/grc_moveit.i"
 	@echo "... src/grc_moveit.s"

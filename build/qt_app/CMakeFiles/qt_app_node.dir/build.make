@@ -385,9 +385,33 @@ qt_app/CMakeFiles/qt_app_node.dir/src/Queen.cpp.o.provides: qt_app/CMakeFiles/qt
 qt_app/CMakeFiles/qt_app_node.dir/src/Queen.cpp.o.provides.build: qt_app/CMakeFiles/qt_app_node.dir/src/Queen.cpp.o
 
 
+qt_app/CMakeFiles/qt_app_node.dir/src/RobotThread.cpp.o: qt_app/CMakeFiles/qt_app_node.dir/flags.make
+qt_app/CMakeFiles/qt_app_node.dir/src/RobotThread.cpp.o: /home/yu/catkin_ws/src/qt_app/src/RobotThread.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yu/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object qt_app/CMakeFiles/qt_app_node.dir/src/RobotThread.cpp.o"
+	cd /home/yu/catkin_ws/build/qt_app && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qt_app_node.dir/src/RobotThread.cpp.o -c /home/yu/catkin_ws/src/qt_app/src/RobotThread.cpp
+
+qt_app/CMakeFiles/qt_app_node.dir/src/RobotThread.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/qt_app_node.dir/src/RobotThread.cpp.i"
+	cd /home/yu/catkin_ws/build/qt_app && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yu/catkin_ws/src/qt_app/src/RobotThread.cpp > CMakeFiles/qt_app_node.dir/src/RobotThread.cpp.i
+
+qt_app/CMakeFiles/qt_app_node.dir/src/RobotThread.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/qt_app_node.dir/src/RobotThread.cpp.s"
+	cd /home/yu/catkin_ws/build/qt_app && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yu/catkin_ws/src/qt_app/src/RobotThread.cpp -o CMakeFiles/qt_app_node.dir/src/RobotThread.cpp.s
+
+qt_app/CMakeFiles/qt_app_node.dir/src/RobotThread.cpp.o.requires:
+
+.PHONY : qt_app/CMakeFiles/qt_app_node.dir/src/RobotThread.cpp.o.requires
+
+qt_app/CMakeFiles/qt_app_node.dir/src/RobotThread.cpp.o.provides: qt_app/CMakeFiles/qt_app_node.dir/src/RobotThread.cpp.o.requires
+	$(MAKE) -f qt_app/CMakeFiles/qt_app_node.dir/build.make qt_app/CMakeFiles/qt_app_node.dir/src/RobotThread.cpp.o.provides.build
+.PHONY : qt_app/CMakeFiles/qt_app_node.dir/src/RobotThread.cpp.o.provides
+
+qt_app/CMakeFiles/qt_app_node.dir/src/RobotThread.cpp.o.provides.build: qt_app/CMakeFiles/qt_app_node.dir/src/RobotThread.cpp.o
+
+
 qt_app/CMakeFiles/qt_app_node.dir/qrc_piece.cpp.o: qt_app/CMakeFiles/qt_app_node.dir/flags.make
 qt_app/CMakeFiles/qt_app_node.dir/qrc_piece.cpp.o: qt_app/qrc_piece.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yu/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object qt_app/CMakeFiles/qt_app_node.dir/qrc_piece.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yu/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object qt_app/CMakeFiles/qt_app_node.dir/qrc_piece.cpp.o"
 	cd /home/yu/catkin_ws/build/qt_app && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qt_app_node.dir/qrc_piece.cpp.o -c /home/yu/catkin_ws/build/qt_app/qrc_piece.cpp
 
 qt_app/CMakeFiles/qt_app_node.dir/qrc_piece.cpp.i: cmake_force
@@ -411,7 +435,7 @@ qt_app/CMakeFiles/qt_app_node.dir/qrc_piece.cpp.o.provides.build: qt_app/CMakeFi
 
 qt_app/CMakeFiles/qt_app_node.dir/qt_app_node_autogen/mocs_compilation.cpp.o: qt_app/CMakeFiles/qt_app_node.dir/flags.make
 qt_app/CMakeFiles/qt_app_node.dir/qt_app_node_autogen/mocs_compilation.cpp.o: qt_app/qt_app_node_autogen/mocs_compilation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yu/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object qt_app/CMakeFiles/qt_app_node.dir/qt_app_node_autogen/mocs_compilation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yu/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object qt_app/CMakeFiles/qt_app_node.dir/qt_app_node_autogen/mocs_compilation.cpp.o"
 	cd /home/yu/catkin_ws/build/qt_app && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qt_app_node.dir/qt_app_node_autogen/mocs_compilation.cpp.o -c /home/yu/catkin_ws/build/qt_app/qt_app_node_autogen/mocs_compilation.cpp
 
 qt_app/CMakeFiles/qt_app_node.dir/qt_app_node_autogen/mocs_compilation.cpp.i: cmake_force
@@ -448,6 +472,7 @@ qt_app_node_OBJECTS = \
 "CMakeFiles/qt_app_node.dir/src/ChessBox.cpp.o" \
 "CMakeFiles/qt_app_node.dir/src/King.cpp.o" \
 "CMakeFiles/qt_app_node.dir/src/Queen.cpp.o" \
+"CMakeFiles/qt_app_node.dir/src/RobotThread.cpp.o" \
 "CMakeFiles/qt_app_node.dir/qrc_piece.cpp.o" \
 "CMakeFiles/qt_app_node.dir/qt_app_node_autogen/mocs_compilation.cpp.o"
 
@@ -467,6 +492,7 @@ qt_app_node_EXTERNAL_OBJECTS =
 /home/yu/catkin_ws/devel/lib/qt_app/qt_app_node: qt_app/CMakeFiles/qt_app_node.dir/src/ChessBox.cpp.o
 /home/yu/catkin_ws/devel/lib/qt_app/qt_app_node: qt_app/CMakeFiles/qt_app_node.dir/src/King.cpp.o
 /home/yu/catkin_ws/devel/lib/qt_app/qt_app_node: qt_app/CMakeFiles/qt_app_node.dir/src/Queen.cpp.o
+/home/yu/catkin_ws/devel/lib/qt_app/qt_app_node: qt_app/CMakeFiles/qt_app_node.dir/src/RobotThread.cpp.o
 /home/yu/catkin_ws/devel/lib/qt_app/qt_app_node: qt_app/CMakeFiles/qt_app_node.dir/qrc_piece.cpp.o
 /home/yu/catkin_ws/devel/lib/qt_app/qt_app_node: qt_app/CMakeFiles/qt_app_node.dir/qt_app_node_autogen/mocs_compilation.cpp.o
 /home/yu/catkin_ws/devel/lib/qt_app/qt_app_node: qt_app/CMakeFiles/qt_app_node.dir/build.make
@@ -492,7 +518,7 @@ qt_app_node_EXTERNAL_OBJECTS =
 /home/yu/catkin_ws/devel/lib/qt_app/qt_app_node: /usr/lib/aarch64-linux-gnu/libQt5Gui.so.5.9.5
 /home/yu/catkin_ws/devel/lib/qt_app/qt_app_node: /usr/lib/aarch64-linux-gnu/libQt5Core.so.5.9.5
 /home/yu/catkin_ws/devel/lib/qt_app/qt_app_node: qt_app/CMakeFiles/qt_app_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yu/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable /home/yu/catkin_ws/devel/lib/qt_app/qt_app_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yu/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable /home/yu/catkin_ws/devel/lib/qt_app/qt_app_node"
 	cd /home/yu/catkin_ws/build/qt_app && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/qt_app_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -513,6 +539,7 @@ qt_app/CMakeFiles/qt_app_node.dir/requires: qt_app/CMakeFiles/qt_app_node.dir/sr
 qt_app/CMakeFiles/qt_app_node.dir/requires: qt_app/CMakeFiles/qt_app_node.dir/src/ChessBox.cpp.o.requires
 qt_app/CMakeFiles/qt_app_node.dir/requires: qt_app/CMakeFiles/qt_app_node.dir/src/King.cpp.o.requires
 qt_app/CMakeFiles/qt_app_node.dir/requires: qt_app/CMakeFiles/qt_app_node.dir/src/Queen.cpp.o.requires
+qt_app/CMakeFiles/qt_app_node.dir/requires: qt_app/CMakeFiles/qt_app_node.dir/src/RobotThread.cpp.o.requires
 qt_app/CMakeFiles/qt_app_node.dir/requires: qt_app/CMakeFiles/qt_app_node.dir/qrc_piece.cpp.o.requires
 qt_app/CMakeFiles/qt_app_node.dir/requires: qt_app/CMakeFiles/qt_app_node.dir/qt_app_node_autogen/mocs_compilation.cpp.o.requires
 

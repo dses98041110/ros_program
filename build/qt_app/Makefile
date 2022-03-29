@@ -746,6 +746,33 @@ src/Queen.cpp.s:
 	cd /home/yu/catkin_ws/build && $(MAKE) -f qt_app/CMakeFiles/qt_app_node.dir/build.make qt_app/CMakeFiles/qt_app_node.dir/src/Queen.cpp.s
 .PHONY : src/Queen.cpp.s
 
+src/RobotThread.o: src/RobotThread.cpp.o
+
+.PHONY : src/RobotThread.o
+
+# target to build an object file
+src/RobotThread.cpp.o:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f qt_app/CMakeFiles/qt_app_node.dir/build.make qt_app/CMakeFiles/qt_app_node.dir/src/RobotThread.cpp.o
+.PHONY : src/RobotThread.cpp.o
+
+src/RobotThread.i: src/RobotThread.cpp.i
+
+.PHONY : src/RobotThread.i
+
+# target to preprocess a source file
+src/RobotThread.cpp.i:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f qt_app/CMakeFiles/qt_app_node.dir/build.make qt_app/CMakeFiles/qt_app_node.dir/src/RobotThread.cpp.i
+.PHONY : src/RobotThread.cpp.i
+
+src/RobotThread.s: src/RobotThread.cpp.s
+
+.PHONY : src/RobotThread.s
+
+# target to generate assembly for a file
+src/RobotThread.cpp.s:
+	cd /home/yu/catkin_ws/build && $(MAKE) -f qt_app/CMakeFiles/qt_app_node.dir/build.make qt_app/CMakeFiles/qt_app_node.dir/src/RobotThread.cpp.s
+.PHONY : src/RobotThread.cpp.s
+
 src/Rook.o: src/Rook.cpp.o
 
 .PHONY : src/Rook.o
@@ -893,6 +920,9 @@ help:
 	@echo "... src/Queen.o"
 	@echo "... src/Queen.i"
 	@echo "... src/Queen.s"
+	@echo "... src/RobotThread.o"
+	@echo "... src/RobotThread.i"
+	@echo "... src/RobotThread.s"
 	@echo "... src/Rook.o"
 	@echo "... src/Rook.i"
 	@echo "... src/Rook.s"

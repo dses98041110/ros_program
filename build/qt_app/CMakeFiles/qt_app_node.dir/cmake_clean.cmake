@@ -15,6 +15,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/qt_app_node.dir/src/ChessBox.cpp.o"
   "CMakeFiles/qt_app_node.dir/src/King.cpp.o"
   "CMakeFiles/qt_app_node.dir/src/Queen.cpp.o"
+  "CMakeFiles/qt_app_node.dir/src/RobotThread.cpp.o"
   "CMakeFiles/qt_app_node.dir/qrc_piece.cpp.o"
   "CMakeFiles/qt_app_node.dir/qt_app_node_autogen/mocs_compilation.cpp.o"
   "/home/yu/catkin_ws/devel/lib/qt_app/qt_app_node.pdb"

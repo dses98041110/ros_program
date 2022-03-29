@@ -6,6 +6,7 @@ qt_app/CMakeFiles/qt_app_node.dir/qrc_piece.cpp.o
 qt_app/CMakeFiles/qt_app_node.dir/qt_app_node_autogen/mocs_compilation.cpp.o
  /home/yu/catkin_ws/build/qt_app/qt_app_node_autogen/UVLADIE3JM/moc_Game.cpp
  /home/yu/catkin_ws/build/qt_app/qt_app_node_autogen/UVLADIE3JM/moc_Piece.cpp
+ /home/yu/catkin_ws/build/qt_app/qt_app_node_autogen/UVLADIE3JM/moc_RobotThread.cpp
  /home/yu/catkin_ws/build/qt_app/qt_app_node_autogen/UVLADIE3JM/moc_mainwindow.cpp
  /home/yu/catkin_ws/build/qt_app/qt_app_node_autogen/mocs_compilation.cpp
  /home/yu/catkin_ws/src/qt_app/include/qt_app/Bishop.h
@@ -19,7 +20,16 @@ qt_app/CMakeFiles/qt_app_node.dir/qt_app_node_autogen/mocs_compilation.cpp.o
  /home/yu/catkin_ws/src/qt_app/src/ChessPiece.h
  /home/yu/catkin_ws/src/qt_app/src/Game.h
  /home/yu/catkin_ws/src/qt_app/src/Piece.h
+ /home/yu/catkin_ws/src/qt_app/src/RobotThread.h
  /home/yu/catkin_ws/src/qt_app/src/mainwindow.h
+ /opt/ros/melodic/include/geometry_msgs/Point.h
+ /opt/ros/melodic/include/geometry_msgs/Pose.h
+ /opt/ros/melodic/include/geometry_msgs/PoseWithCovariance.h
+ /opt/ros/melodic/include/geometry_msgs/Quaternion.h
+ /opt/ros/melodic/include/geometry_msgs/Twist.h
+ /opt/ros/melodic/include/geometry_msgs/TwistWithCovariance.h
+ /opt/ros/melodic/include/geometry_msgs/Vector3.h
+ /opt/ros/melodic/include/nav_msgs/Odometry.h
  /opt/ros/melodic/include/ros/advertise_options.h
  /opt/ros/melodic/include/ros/advertise_service_options.h
  /opt/ros/melodic/include/ros/assert.h
@@ -41,6 +51,7 @@ qt_app/CMakeFiles/qt_app_node.dir/qt_app_node_autogen/mocs_compilation.cpp.o
  /opt/ros/melodic/include/ros/message_operations.h
  /opt/ros/melodic/include/ros/message_traits.h
  /opt/ros/melodic/include/ros/names.h
+ /opt/ros/melodic/include/ros/network.h
  /opt/ros/melodic/include/ros/node_handle.h
  /opt/ros/melodic/include/ros/param.h
  /opt/ros/melodic/include/ros/parameter_adapter.h
@@ -76,6 +87,7 @@ qt_app/CMakeFiles/qt_app_node.dir/qt_app_node_autogen/mocs_compilation.cpp.o
  /opt/ros/melodic/include/ros/wall_timer.h
  /opt/ros/melodic/include/ros/wall_timer_options.h
  /opt/ros/melodic/include/rosconsole/macros_generated.h
+ /opt/ros/melodic/include/std_msgs/Header.h
  /opt/ros/melodic/include/std_msgs/String.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h
@@ -84,6 +96,7 @@ qt_app/CMakeFiles/qt_app_node.dir/qt_app_node_autogen/mocs_compilation.cpp.o
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QList
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QMargins
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QMetaType
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QMutex
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QObject
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QPointF
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QRect
@@ -92,6 +105,7 @@ qt_app/CMakeFiles/qt_app_node.dir/qt_app_node_autogen/mocs_compilation.cpp.o
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QSize
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QSizeF
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QStringList
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QThread
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QTime
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QVariant
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QtCore
@@ -549,6 +563,15 @@ qt_app/CMakeFiles/qt_app_node.dir/src/Bishop.cpp.o
  /home/yu/catkin_ws/src/qt_app/src/ChessBox.h
  /home/yu/catkin_ws/src/qt_app/src/ChessPiece.h
  /home/yu/catkin_ws/src/qt_app/src/Game.h
+ /home/yu/catkin_ws/src/qt_app/src/RobotThread.h
+ /opt/ros/melodic/include/geometry_msgs/Point.h
+ /opt/ros/melodic/include/geometry_msgs/Pose.h
+ /opt/ros/melodic/include/geometry_msgs/PoseWithCovariance.h
+ /opt/ros/melodic/include/geometry_msgs/Quaternion.h
+ /opt/ros/melodic/include/geometry_msgs/Twist.h
+ /opt/ros/melodic/include/geometry_msgs/TwistWithCovariance.h
+ /opt/ros/melodic/include/geometry_msgs/Vector3.h
+ /opt/ros/melodic/include/nav_msgs/Odometry.h
  /opt/ros/melodic/include/ros/advertise_options.h
  /opt/ros/melodic/include/ros/advertise_service_options.h
  /opt/ros/melodic/include/ros/assert.h
@@ -570,6 +593,7 @@ qt_app/CMakeFiles/qt_app_node.dir/src/Bishop.cpp.o
  /opt/ros/melodic/include/ros/message_operations.h
  /opt/ros/melodic/include/ros/message_traits.h
  /opt/ros/melodic/include/ros/names.h
+ /opt/ros/melodic/include/ros/network.h
  /opt/ros/melodic/include/ros/node_handle.h
  /opt/ros/melodic/include/ros/param.h
  /opt/ros/melodic/include/ros/parameter_adapter.h
@@ -605,81 +629,197 @@ qt_app/CMakeFiles/qt_app_node.dir/src/Bishop.cpp.o
  /opt/ros/melodic/include/ros/wall_timer.h
  /opt/ros/melodic/include/ros/wall_timer_options.h
  /opt/ros/melodic/include/rosconsole/macros_generated.h
+ /opt/ros/melodic/include/std_msgs/Header.h
  /opt/ros/melodic/include/std_msgs/String.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QDebug
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QMutex
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QObject
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QScopedPointer
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QStringList
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QThread
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QTime
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QtCore
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QtCoreDepends
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstracteventdispatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractitemmodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractnativeeventfilter.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractproxymodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractstate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstracttransition.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qalgorithms.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qanimationgroup.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydataops.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydatapointer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_bootstrap.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_cxx11.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_msvc.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbasicatomic.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbasictimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbitarray.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbuffer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearray.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearraylist.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearraymatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcache.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qchar.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcollator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcommandlineoption.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcommandlineparser.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcompilerdetection.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qconfig-bootstrapped.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qconfig.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcontainerfwd.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcontiguouscache.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcoreapplication.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcoreevent.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcryptographichash.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdatastream.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdatetime.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdeadlinetimer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdebug.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdir.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdiriterator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeasingcurve.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qelapsedtimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qendian.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeventloop.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeventtransition.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qexception.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfactoryinterface.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qfile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qfiledevice.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfileinfo.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfileselector.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfilesystemwatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfinalstate.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qflags.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuture.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfutureinterface.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuturesynchronizer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuturewatcher.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qgenericatomic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qglobal.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qglobalstatic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qhash.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qhashfunctions.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qhistorystate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qidentityproxymodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qiodevice.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qisenum.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qitemselectionmodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qiterator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonarray.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsondocument.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonobject.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonvalue.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlibrary.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlibraryinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qline.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlinkedlist.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlist.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlocale.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlockfile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlogging.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qloggingcategory.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmap.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmargins.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmath.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmessageauthenticationcode.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmetaobject.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmetatype.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimedata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimedatabase.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimetype.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmutex.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qnamespace.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qnumeric.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobject.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobject_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectcleanuphandler.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectdefs.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectdefs_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qoperatingsystemversion.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qpair.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qparallelanimationgroup.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpauseanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qplugin.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpluginloader.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qpoint.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpointer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qprocess.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qprocessordetection.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpropertyanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qqueue.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qreadwritelock.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qrect.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qrefcount.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qregexp.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qregularexpression.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qresource.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qresultstore.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qrunnable.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsavefile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qscopedpointer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qscopedvaluerollback.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsemaphore.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsequentialanimationgroup.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qset.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsettings.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qshareddata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedmemory.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedpointer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsignalmapper.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsignaltransition.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsize.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsocketnotifier.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsortfilterproxymodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstack.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstandardpaths.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstatemachine.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstorageinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstring.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringbuilder.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringlist.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringlistmodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringmatcher.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsysinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsystemdetection.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsystemsemaphore.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtcore-config.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtcoreversion.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtemporarydir.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtemporaryfile.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextboundaryfinder.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextcodec.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextstream.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthread.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthreadpool.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthreadstorage.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimeline.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimezone.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtranslator.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtypeinfo.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtypetraits.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qurl.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qurlquery.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/quuid.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvariant.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qvariantanimation.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvarlengtharray.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvector.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qversionnumber.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qversiontagging.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qwaitcondition.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qwineventnotifier.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qxmlstream.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/QBrush
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qbrush.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qcolor.h
@@ -737,7 +877,16 @@ qt_app/CMakeFiles/qt_app_node.dir/src/ChessBoard.cpp.o
  /home/yu/catkin_ws/src/qt_app/src/Knight.h
  /home/yu/catkin_ws/src/qt_app/src/Pawn.h
  /home/yu/catkin_ws/src/qt_app/src/Queen.h
+ /home/yu/catkin_ws/src/qt_app/src/RobotThread.h
  /home/yu/catkin_ws/src/qt_app/src/Rook.h
+ /opt/ros/melodic/include/geometry_msgs/Point.h
+ /opt/ros/melodic/include/geometry_msgs/Pose.h
+ /opt/ros/melodic/include/geometry_msgs/PoseWithCovariance.h
+ /opt/ros/melodic/include/geometry_msgs/Quaternion.h
+ /opt/ros/melodic/include/geometry_msgs/Twist.h
+ /opt/ros/melodic/include/geometry_msgs/TwistWithCovariance.h
+ /opt/ros/melodic/include/geometry_msgs/Vector3.h
+ /opt/ros/melodic/include/nav_msgs/Odometry.h
  /opt/ros/melodic/include/ros/advertise_options.h
  /opt/ros/melodic/include/ros/advertise_service_options.h
  /opt/ros/melodic/include/ros/assert.h
@@ -759,6 +908,7 @@ qt_app/CMakeFiles/qt_app_node.dir/src/ChessBoard.cpp.o
  /opt/ros/melodic/include/ros/message_operations.h
  /opt/ros/melodic/include/ros/message_traits.h
  /opt/ros/melodic/include/ros/names.h
+ /opt/ros/melodic/include/ros/network.h
  /opt/ros/melodic/include/ros/node_handle.h
  /opt/ros/melodic/include/ros/param.h
  /opt/ros/melodic/include/ros/parameter_adapter.h
@@ -794,81 +944,197 @@ qt_app/CMakeFiles/qt_app_node.dir/src/ChessBoard.cpp.o
  /opt/ros/melodic/include/ros/wall_timer.h
  /opt/ros/melodic/include/ros/wall_timer_options.h
  /opt/ros/melodic/include/rosconsole/macros_generated.h
+ /opt/ros/melodic/include/std_msgs/Header.h
  /opt/ros/melodic/include/std_msgs/String.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QDebug
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QMutex
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QObject
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QScopedPointer
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QStringList
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QThread
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QTime
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QtCore
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QtCoreDepends
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstracteventdispatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractitemmodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractnativeeventfilter.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractproxymodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractstate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstracttransition.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qalgorithms.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qanimationgroup.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydataops.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydatapointer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_bootstrap.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_cxx11.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_msvc.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbasicatomic.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbasictimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbitarray.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbuffer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearray.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearraylist.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearraymatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcache.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qchar.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcollator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcommandlineoption.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcommandlineparser.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcompilerdetection.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qconfig-bootstrapped.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qconfig.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcontainerfwd.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcontiguouscache.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcoreapplication.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcoreevent.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcryptographichash.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdatastream.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdatetime.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdeadlinetimer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdebug.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdir.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdiriterator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeasingcurve.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qelapsedtimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qendian.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeventloop.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeventtransition.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qexception.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfactoryinterface.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qfile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qfiledevice.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfileinfo.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfileselector.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfilesystemwatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfinalstate.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qflags.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuture.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfutureinterface.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuturesynchronizer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuturewatcher.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qgenericatomic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qglobal.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qglobalstatic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qhash.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qhashfunctions.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qhistorystate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qidentityproxymodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qiodevice.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qisenum.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qitemselectionmodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qiterator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonarray.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsondocument.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonobject.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonvalue.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlibrary.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlibraryinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qline.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlinkedlist.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlist.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlocale.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlockfile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlogging.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qloggingcategory.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmap.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmargins.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmath.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmessageauthenticationcode.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmetaobject.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmetatype.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimedata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimedatabase.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimetype.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmutex.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qnamespace.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qnumeric.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobject.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobject_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectcleanuphandler.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectdefs.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectdefs_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qoperatingsystemversion.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qpair.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qparallelanimationgroup.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpauseanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qplugin.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpluginloader.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qpoint.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpointer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qprocess.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qprocessordetection.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpropertyanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qqueue.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qreadwritelock.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qrect.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qrefcount.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qregexp.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qregularexpression.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qresource.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qresultstore.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qrunnable.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsavefile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qscopedpointer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qscopedvaluerollback.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsemaphore.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsequentialanimationgroup.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qset.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsettings.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qshareddata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedmemory.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedpointer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsignalmapper.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsignaltransition.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsize.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsocketnotifier.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsortfilterproxymodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstack.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstandardpaths.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstatemachine.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstorageinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstring.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringbuilder.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringlist.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringlistmodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringmatcher.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsysinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsystemdetection.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsystemsemaphore.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtcore-config.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtcoreversion.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtemporarydir.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtemporaryfile.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextboundaryfinder.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextcodec.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextstream.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthread.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthreadpool.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthreadstorage.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimeline.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimezone.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtranslator.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtypeinfo.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtypetraits.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qurl.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qurlquery.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/quuid.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvariant.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qvariantanimation.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvarlengtharray.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvector.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qversionnumber.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qversiontagging.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qwaitcondition.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qwineventnotifier.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qxmlstream.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/QBrush
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qbrush.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qcolor.h
@@ -927,6 +1193,15 @@ qt_app/CMakeFiles/qt_app_node.dir/src/ChessBox.cpp.o
  /home/yu/catkin_ws/src/qt_app/src/ChessBox.h
  /home/yu/catkin_ws/src/qt_app/src/ChessPiece.h
  /home/yu/catkin_ws/src/qt_app/src/Game.h
+ /home/yu/catkin_ws/src/qt_app/src/RobotThread.h
+ /opt/ros/melodic/include/geometry_msgs/Point.h
+ /opt/ros/melodic/include/geometry_msgs/Pose.h
+ /opt/ros/melodic/include/geometry_msgs/PoseWithCovariance.h
+ /opt/ros/melodic/include/geometry_msgs/Quaternion.h
+ /opt/ros/melodic/include/geometry_msgs/Twist.h
+ /opt/ros/melodic/include/geometry_msgs/TwistWithCovariance.h
+ /opt/ros/melodic/include/geometry_msgs/Vector3.h
+ /opt/ros/melodic/include/nav_msgs/Odometry.h
  /opt/ros/melodic/include/ros/advertise_options.h
  /opt/ros/melodic/include/ros/advertise_service_options.h
  /opt/ros/melodic/include/ros/assert.h
@@ -948,6 +1223,7 @@ qt_app/CMakeFiles/qt_app_node.dir/src/ChessBox.cpp.o
  /opt/ros/melodic/include/ros/message_operations.h
  /opt/ros/melodic/include/ros/message_traits.h
  /opt/ros/melodic/include/ros/names.h
+ /opt/ros/melodic/include/ros/network.h
  /opt/ros/melodic/include/ros/node_handle.h
  /opt/ros/melodic/include/ros/param.h
  /opt/ros/melodic/include/ros/parameter_adapter.h
@@ -983,81 +1259,197 @@ qt_app/CMakeFiles/qt_app_node.dir/src/ChessBox.cpp.o
  /opt/ros/melodic/include/ros/wall_timer.h
  /opt/ros/melodic/include/ros/wall_timer_options.h
  /opt/ros/melodic/include/rosconsole/macros_generated.h
+ /opt/ros/melodic/include/std_msgs/Header.h
  /opt/ros/melodic/include/std_msgs/String.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QDebug
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QMutex
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QObject
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QScopedPointer
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QStringList
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QThread
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QTime
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QtCore
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QtCoreDepends
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstracteventdispatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractitemmodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractnativeeventfilter.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractproxymodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractstate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstracttransition.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qalgorithms.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qanimationgroup.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydataops.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydatapointer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_bootstrap.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_cxx11.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_msvc.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbasicatomic.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbasictimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbitarray.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbuffer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearray.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearraylist.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearraymatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcache.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qchar.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcollator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcommandlineoption.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcommandlineparser.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcompilerdetection.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qconfig-bootstrapped.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qconfig.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcontainerfwd.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcontiguouscache.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcoreapplication.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcoreevent.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcryptographichash.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdatastream.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdatetime.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdeadlinetimer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdebug.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdir.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdiriterator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeasingcurve.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qelapsedtimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qendian.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeventloop.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeventtransition.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qexception.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfactoryinterface.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qfile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qfiledevice.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfileinfo.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfileselector.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfilesystemwatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfinalstate.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qflags.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuture.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfutureinterface.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuturesynchronizer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuturewatcher.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qgenericatomic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qglobal.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qglobalstatic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qhash.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qhashfunctions.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qhistorystate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qidentityproxymodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qiodevice.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qisenum.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qitemselectionmodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qiterator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonarray.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsondocument.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonobject.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonvalue.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlibrary.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlibraryinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qline.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlinkedlist.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlist.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlocale.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlockfile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlogging.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qloggingcategory.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmap.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmargins.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmath.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmessageauthenticationcode.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmetaobject.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmetatype.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimedata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimedatabase.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimetype.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmutex.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qnamespace.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qnumeric.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobject.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobject_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectcleanuphandler.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectdefs.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectdefs_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qoperatingsystemversion.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qpair.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qparallelanimationgroup.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpauseanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qplugin.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpluginloader.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qpoint.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpointer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qprocess.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qprocessordetection.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpropertyanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qqueue.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qreadwritelock.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qrect.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qrefcount.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qregexp.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qregularexpression.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qresource.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qresultstore.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qrunnable.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsavefile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qscopedpointer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qscopedvaluerollback.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsemaphore.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsequentialanimationgroup.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qset.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsettings.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qshareddata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedmemory.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedpointer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsignalmapper.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsignaltransition.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsize.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsocketnotifier.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsortfilterproxymodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstack.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstandardpaths.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstatemachine.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstorageinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstring.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringbuilder.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringlist.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringlistmodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringmatcher.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsysinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsystemdetection.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsystemsemaphore.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtcore-config.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtcoreversion.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtemporarydir.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtemporaryfile.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextboundaryfinder.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextcodec.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextstream.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthread.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthreadpool.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthreadstorage.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimeline.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimezone.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtranslator.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtypeinfo.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtypetraits.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qurl.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qurlquery.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/quuid.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvariant.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qvariantanimation.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvarlengtharray.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvector.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qversionnumber.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qversiontagging.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qwaitcondition.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qwineventnotifier.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qxmlstream.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/QBrush
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qbrush.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qcolor.h
@@ -1116,6 +1508,15 @@ qt_app/CMakeFiles/qt_app_node.dir/src/ChessPiece.cpp.o
  /home/yu/catkin_ws/src/qt_app/src/ChessPiece.cpp
  /home/yu/catkin_ws/src/qt_app/src/ChessPiece.h
  /home/yu/catkin_ws/src/qt_app/src/Game.h
+ /home/yu/catkin_ws/src/qt_app/src/RobotThread.h
+ /opt/ros/melodic/include/geometry_msgs/Point.h
+ /opt/ros/melodic/include/geometry_msgs/Pose.h
+ /opt/ros/melodic/include/geometry_msgs/PoseWithCovariance.h
+ /opt/ros/melodic/include/geometry_msgs/Quaternion.h
+ /opt/ros/melodic/include/geometry_msgs/Twist.h
+ /opt/ros/melodic/include/geometry_msgs/TwistWithCovariance.h
+ /opt/ros/melodic/include/geometry_msgs/Vector3.h
+ /opt/ros/melodic/include/nav_msgs/Odometry.h
  /opt/ros/melodic/include/ros/advertise_options.h
  /opt/ros/melodic/include/ros/advertise_service_options.h
  /opt/ros/melodic/include/ros/assert.h
@@ -1137,6 +1538,7 @@ qt_app/CMakeFiles/qt_app_node.dir/src/ChessPiece.cpp.o
  /opt/ros/melodic/include/ros/message_operations.h
  /opt/ros/melodic/include/ros/message_traits.h
  /opt/ros/melodic/include/ros/names.h
+ /opt/ros/melodic/include/ros/network.h
  /opt/ros/melodic/include/ros/node_handle.h
  /opt/ros/melodic/include/ros/param.h
  /opt/ros/melodic/include/ros/parameter_adapter.h
@@ -1172,81 +1574,197 @@ qt_app/CMakeFiles/qt_app_node.dir/src/ChessPiece.cpp.o
  /opt/ros/melodic/include/ros/wall_timer.h
  /opt/ros/melodic/include/ros/wall_timer_options.h
  /opt/ros/melodic/include/rosconsole/macros_generated.h
+ /opt/ros/melodic/include/std_msgs/Header.h
  /opt/ros/melodic/include/std_msgs/String.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QDebug
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QMutex
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QObject
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QScopedPointer
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QStringList
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QThread
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QTime
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QtCore
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QtCoreDepends
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstracteventdispatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractitemmodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractnativeeventfilter.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractproxymodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractstate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstracttransition.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qalgorithms.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qanimationgroup.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydataops.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydatapointer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_bootstrap.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_cxx11.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_msvc.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbasicatomic.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbasictimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbitarray.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbuffer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearray.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearraylist.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearraymatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcache.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qchar.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcollator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcommandlineoption.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcommandlineparser.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcompilerdetection.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qconfig-bootstrapped.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qconfig.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcontainerfwd.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcontiguouscache.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcoreapplication.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcoreevent.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcryptographichash.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdatastream.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdatetime.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdeadlinetimer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdebug.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdir.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdiriterator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeasingcurve.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qelapsedtimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qendian.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeventloop.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeventtransition.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qexception.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfactoryinterface.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qfile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qfiledevice.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfileinfo.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfileselector.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfilesystemwatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfinalstate.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qflags.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuture.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfutureinterface.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuturesynchronizer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuturewatcher.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qgenericatomic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qglobal.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qglobalstatic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qhash.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qhashfunctions.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qhistorystate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qidentityproxymodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qiodevice.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qisenum.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qitemselectionmodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qiterator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonarray.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsondocument.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonobject.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonvalue.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlibrary.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlibraryinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qline.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlinkedlist.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlist.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlocale.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlockfile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlogging.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qloggingcategory.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmap.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmargins.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmath.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmessageauthenticationcode.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmetaobject.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmetatype.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimedata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimedatabase.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimetype.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmutex.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qnamespace.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qnumeric.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobject.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobject_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectcleanuphandler.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectdefs.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectdefs_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qoperatingsystemversion.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qpair.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qparallelanimationgroup.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpauseanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qplugin.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpluginloader.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qpoint.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpointer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qprocess.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qprocessordetection.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpropertyanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qqueue.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qreadwritelock.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qrect.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qrefcount.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qregexp.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qregularexpression.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qresource.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qresultstore.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qrunnable.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsavefile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qscopedpointer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qscopedvaluerollback.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsemaphore.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsequentialanimationgroup.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qset.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsettings.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qshareddata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedmemory.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedpointer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsignalmapper.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsignaltransition.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsize.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsocketnotifier.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsortfilterproxymodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstack.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstandardpaths.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstatemachine.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstorageinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstring.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringbuilder.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringlist.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringlistmodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringmatcher.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsysinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsystemdetection.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsystemsemaphore.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtcore-config.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtcoreversion.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtemporarydir.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtemporaryfile.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextboundaryfinder.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextcodec.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextstream.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthread.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthreadpool.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthreadstorage.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimeline.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimezone.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtranslator.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtypeinfo.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtypetraits.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qurl.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qurlquery.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/quuid.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvariant.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qvariantanimation.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvarlengtharray.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvector.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qversionnumber.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qversiontagging.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qwaitcondition.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qwineventnotifier.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qxmlstream.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/QBrush
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qbrush.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qcolor.h
@@ -1305,6 +1823,15 @@ qt_app/CMakeFiles/qt_app_node.dir/src/Game.cpp.o
  /home/yu/catkin_ws/src/qt_app/src/Game.cpp
  /home/yu/catkin_ws/src/qt_app/src/Game.h
  /home/yu/catkin_ws/src/qt_app/src/King.h
+ /home/yu/catkin_ws/src/qt_app/src/RobotThread.h
+ /opt/ros/melodic/include/geometry_msgs/Point.h
+ /opt/ros/melodic/include/geometry_msgs/Pose.h
+ /opt/ros/melodic/include/geometry_msgs/PoseWithCovariance.h
+ /opt/ros/melodic/include/geometry_msgs/Quaternion.h
+ /opt/ros/melodic/include/geometry_msgs/Twist.h
+ /opt/ros/melodic/include/geometry_msgs/TwistWithCovariance.h
+ /opt/ros/melodic/include/geometry_msgs/Vector3.h
+ /opt/ros/melodic/include/nav_msgs/Odometry.h
  /opt/ros/melodic/include/ros/advertise_options.h
  /opt/ros/melodic/include/ros/advertise_service_options.h
  /opt/ros/melodic/include/ros/assert.h
@@ -1326,6 +1853,7 @@ qt_app/CMakeFiles/qt_app_node.dir/src/Game.cpp.o
  /opt/ros/melodic/include/ros/message_operations.h
  /opt/ros/melodic/include/ros/message_traits.h
  /opt/ros/melodic/include/ros/names.h
+ /opt/ros/melodic/include/ros/network.h
  /opt/ros/melodic/include/ros/node_handle.h
  /opt/ros/melodic/include/ros/param.h
  /opt/ros/melodic/include/ros/parameter_adapter.h
@@ -1361,81 +1889,197 @@ qt_app/CMakeFiles/qt_app_node.dir/src/Game.cpp.o
  /opt/ros/melodic/include/ros/wall_timer.h
  /opt/ros/melodic/include/ros/wall_timer_options.h
  /opt/ros/melodic/include/rosconsole/macros_generated.h
+ /opt/ros/melodic/include/std_msgs/Header.h
  /opt/ros/melodic/include/std_msgs/String.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QDebug
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QMutex
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QObject
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QScopedPointer
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QStringList
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QThread
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QTime
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QtCore
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QtCoreDepends
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstracteventdispatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractitemmodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractnativeeventfilter.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractproxymodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractstate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstracttransition.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qalgorithms.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qanimationgroup.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydataops.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydatapointer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_bootstrap.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_cxx11.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_msvc.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbasicatomic.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbasictimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbitarray.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbuffer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearray.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearraylist.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearraymatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcache.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qchar.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcollator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcommandlineoption.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcommandlineparser.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcompilerdetection.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qconfig-bootstrapped.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qconfig.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcontainerfwd.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcontiguouscache.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcoreapplication.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcoreevent.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcryptographichash.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdatastream.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdatetime.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdeadlinetimer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdebug.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdir.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdiriterator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeasingcurve.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qelapsedtimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qendian.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeventloop.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeventtransition.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qexception.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfactoryinterface.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qfile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qfiledevice.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfileinfo.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfileselector.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfilesystemwatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfinalstate.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qflags.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuture.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfutureinterface.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuturesynchronizer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuturewatcher.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qgenericatomic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qglobal.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qglobalstatic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qhash.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qhashfunctions.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qhistorystate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qidentityproxymodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qiodevice.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qisenum.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qitemselectionmodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qiterator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonarray.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsondocument.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonobject.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonvalue.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlibrary.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlibraryinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qline.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlinkedlist.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlist.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlocale.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlockfile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlogging.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qloggingcategory.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmap.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmargins.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmath.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmessageauthenticationcode.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmetaobject.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmetatype.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimedata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimedatabase.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimetype.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmutex.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qnamespace.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qnumeric.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobject.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobject_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectcleanuphandler.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectdefs.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectdefs_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qoperatingsystemversion.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qpair.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qparallelanimationgroup.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpauseanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qplugin.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpluginloader.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qpoint.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpointer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qprocess.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qprocessordetection.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpropertyanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qqueue.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qreadwritelock.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qrect.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qrefcount.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qregexp.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qregularexpression.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qresource.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qresultstore.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qrunnable.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsavefile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qscopedpointer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qscopedvaluerollback.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsemaphore.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsequentialanimationgroup.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qset.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsettings.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qshareddata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedmemory.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedpointer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsignalmapper.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsignaltransition.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsize.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsocketnotifier.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsortfilterproxymodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstack.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstandardpaths.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstatemachine.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstorageinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstring.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringbuilder.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringlist.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringlistmodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringmatcher.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsysinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsystemdetection.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsystemsemaphore.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtcore-config.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtcoreversion.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtemporarydir.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtemporaryfile.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextboundaryfinder.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextcodec.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextstream.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthread.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthreadpool.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthreadstorage.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimeline.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimezone.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtranslator.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtypeinfo.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtypetraits.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qurl.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qurlquery.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/quuid.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvariant.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qvariantanimation.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvarlengtharray.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvector.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qversionnumber.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qversiontagging.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qwaitcondition.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qwineventnotifier.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qxmlstream.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/QBrush
  /usr/include/aarch64-linux-gnu/qt5/QtGui/QPixmap
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qbrush.h
@@ -1495,6 +2139,15 @@ qt_app/CMakeFiles/qt_app_node.dir/src/King.cpp.o
  /home/yu/catkin_ws/src/qt_app/src/Game.h
  /home/yu/catkin_ws/src/qt_app/src/King.cpp
  /home/yu/catkin_ws/src/qt_app/src/King.h
+ /home/yu/catkin_ws/src/qt_app/src/RobotThread.h
+ /opt/ros/melodic/include/geometry_msgs/Point.h
+ /opt/ros/melodic/include/geometry_msgs/Pose.h
+ /opt/ros/melodic/include/geometry_msgs/PoseWithCovariance.h
+ /opt/ros/melodic/include/geometry_msgs/Quaternion.h
+ /opt/ros/melodic/include/geometry_msgs/Twist.h
+ /opt/ros/melodic/include/geometry_msgs/TwistWithCovariance.h
+ /opt/ros/melodic/include/geometry_msgs/Vector3.h
+ /opt/ros/melodic/include/nav_msgs/Odometry.h
  /opt/ros/melodic/include/ros/advertise_options.h
  /opt/ros/melodic/include/ros/advertise_service_options.h
  /opt/ros/melodic/include/ros/assert.h
@@ -1516,6 +2169,7 @@ qt_app/CMakeFiles/qt_app_node.dir/src/King.cpp.o
  /opt/ros/melodic/include/ros/message_operations.h
  /opt/ros/melodic/include/ros/message_traits.h
  /opt/ros/melodic/include/ros/names.h
+ /opt/ros/melodic/include/ros/network.h
  /opt/ros/melodic/include/ros/node_handle.h
  /opt/ros/melodic/include/ros/param.h
  /opt/ros/melodic/include/ros/parameter_adapter.h
@@ -1551,81 +2205,197 @@ qt_app/CMakeFiles/qt_app_node.dir/src/King.cpp.o
  /opt/ros/melodic/include/ros/wall_timer.h
  /opt/ros/melodic/include/ros/wall_timer_options.h
  /opt/ros/melodic/include/rosconsole/macros_generated.h
+ /opt/ros/melodic/include/std_msgs/Header.h
  /opt/ros/melodic/include/std_msgs/String.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QDebug
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QMutex
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QObject
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QScopedPointer
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QStringList
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QThread
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QTime
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QtCore
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QtCoreDepends
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstracteventdispatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractitemmodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractnativeeventfilter.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractproxymodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractstate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstracttransition.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qalgorithms.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qanimationgroup.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydataops.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydatapointer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_bootstrap.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_cxx11.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_msvc.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbasicatomic.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbasictimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbitarray.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbuffer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearray.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearraylist.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearraymatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcache.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qchar.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcollator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcommandlineoption.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcommandlineparser.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcompilerdetection.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qconfig-bootstrapped.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qconfig.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcontainerfwd.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcontiguouscache.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcoreapplication.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcoreevent.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcryptographichash.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdatastream.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdatetime.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdeadlinetimer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdebug.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdir.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdiriterator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeasingcurve.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qelapsedtimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qendian.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeventloop.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeventtransition.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qexception.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfactoryinterface.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qfile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qfiledevice.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfileinfo.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfileselector.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfilesystemwatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfinalstate.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qflags.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuture.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfutureinterface.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuturesynchronizer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuturewatcher.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qgenericatomic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qglobal.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qglobalstatic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qhash.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qhashfunctions.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qhistorystate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qidentityproxymodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qiodevice.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qisenum.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qitemselectionmodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qiterator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonarray.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsondocument.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonobject.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonvalue.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlibrary.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlibraryinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qline.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlinkedlist.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlist.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlocale.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlockfile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlogging.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qloggingcategory.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmap.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmargins.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmath.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmessageauthenticationcode.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmetaobject.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmetatype.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimedata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimedatabase.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimetype.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmutex.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qnamespace.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qnumeric.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobject.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobject_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectcleanuphandler.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectdefs.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectdefs_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qoperatingsystemversion.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qpair.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qparallelanimationgroup.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpauseanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qplugin.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpluginloader.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qpoint.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpointer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qprocess.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qprocessordetection.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpropertyanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qqueue.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qreadwritelock.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qrect.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qrefcount.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qregexp.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qregularexpression.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qresource.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qresultstore.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qrunnable.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsavefile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qscopedpointer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qscopedvaluerollback.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsemaphore.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsequentialanimationgroup.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qset.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsettings.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qshareddata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedmemory.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedpointer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsignalmapper.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsignaltransition.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsize.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsocketnotifier.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsortfilterproxymodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstack.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstandardpaths.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstatemachine.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstorageinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstring.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringbuilder.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringlist.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringlistmodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringmatcher.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsysinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsystemdetection.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsystemsemaphore.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtcore-config.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtcoreversion.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtemporarydir.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtemporaryfile.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextboundaryfinder.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextcodec.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextstream.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthread.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthreadpool.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthreadstorage.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimeline.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimezone.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtranslator.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtypeinfo.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtypetraits.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qurl.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qurlquery.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/quuid.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvariant.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qvariantanimation.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvarlengtharray.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvector.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qversionnumber.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qversiontagging.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qwaitcondition.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qwineventnotifier.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qxmlstream.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/QBrush
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qbrush.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qcolor.h
@@ -1684,6 +2454,15 @@ qt_app/CMakeFiles/qt_app_node.dir/src/Knight.cpp.o
  /home/yu/catkin_ws/src/qt_app/src/Game.h
  /home/yu/catkin_ws/src/qt_app/src/Knight.cpp
  /home/yu/catkin_ws/src/qt_app/src/Knight.h
+ /home/yu/catkin_ws/src/qt_app/src/RobotThread.h
+ /opt/ros/melodic/include/geometry_msgs/Point.h
+ /opt/ros/melodic/include/geometry_msgs/Pose.h
+ /opt/ros/melodic/include/geometry_msgs/PoseWithCovariance.h
+ /opt/ros/melodic/include/geometry_msgs/Quaternion.h
+ /opt/ros/melodic/include/geometry_msgs/Twist.h
+ /opt/ros/melodic/include/geometry_msgs/TwistWithCovariance.h
+ /opt/ros/melodic/include/geometry_msgs/Vector3.h
+ /opt/ros/melodic/include/nav_msgs/Odometry.h
  /opt/ros/melodic/include/ros/advertise_options.h
  /opt/ros/melodic/include/ros/advertise_service_options.h
  /opt/ros/melodic/include/ros/assert.h
@@ -1705,6 +2484,7 @@ qt_app/CMakeFiles/qt_app_node.dir/src/Knight.cpp.o
  /opt/ros/melodic/include/ros/message_operations.h
  /opt/ros/melodic/include/ros/message_traits.h
  /opt/ros/melodic/include/ros/names.h
+ /opt/ros/melodic/include/ros/network.h
  /opt/ros/melodic/include/ros/node_handle.h
  /opt/ros/melodic/include/ros/param.h
  /opt/ros/melodic/include/ros/parameter_adapter.h
@@ -1740,81 +2520,197 @@ qt_app/CMakeFiles/qt_app_node.dir/src/Knight.cpp.o
  /opt/ros/melodic/include/ros/wall_timer.h
  /opt/ros/melodic/include/ros/wall_timer_options.h
  /opt/ros/melodic/include/rosconsole/macros_generated.h
+ /opt/ros/melodic/include/std_msgs/Header.h
  /opt/ros/melodic/include/std_msgs/String.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QDebug
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QMutex
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QObject
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QScopedPointer
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QStringList
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QThread
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QTime
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QtCore
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QtCoreDepends
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstracteventdispatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractitemmodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractnativeeventfilter.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractproxymodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractstate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstracttransition.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qalgorithms.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qanimationgroup.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydataops.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydatapointer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_bootstrap.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_cxx11.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_msvc.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbasicatomic.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbasictimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbitarray.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbuffer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearray.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearraylist.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearraymatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcache.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qchar.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcollator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcommandlineoption.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcommandlineparser.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcompilerdetection.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qconfig-bootstrapped.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qconfig.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcontainerfwd.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcontiguouscache.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcoreapplication.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcoreevent.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcryptographichash.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdatastream.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdatetime.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdeadlinetimer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdebug.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdir.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdiriterator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeasingcurve.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qelapsedtimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qendian.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeventloop.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeventtransition.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qexception.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfactoryinterface.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qfile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qfiledevice.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfileinfo.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfileselector.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfilesystemwatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfinalstate.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qflags.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuture.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfutureinterface.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuturesynchronizer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuturewatcher.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qgenericatomic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qglobal.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qglobalstatic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qhash.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qhashfunctions.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qhistorystate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qidentityproxymodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qiodevice.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qisenum.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qitemselectionmodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qiterator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonarray.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsondocument.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonobject.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonvalue.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlibrary.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlibraryinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qline.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlinkedlist.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlist.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlocale.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlockfile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlogging.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qloggingcategory.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmap.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmargins.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmath.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmessageauthenticationcode.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmetaobject.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmetatype.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimedata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimedatabase.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimetype.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmutex.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qnamespace.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qnumeric.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobject.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobject_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectcleanuphandler.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectdefs.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectdefs_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qoperatingsystemversion.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qpair.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qparallelanimationgroup.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpauseanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qplugin.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpluginloader.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qpoint.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpointer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qprocess.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qprocessordetection.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpropertyanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qqueue.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qreadwritelock.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qrect.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qrefcount.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qregexp.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qregularexpression.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qresource.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qresultstore.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qrunnable.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsavefile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qscopedpointer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qscopedvaluerollback.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsemaphore.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsequentialanimationgroup.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qset.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsettings.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qshareddata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedmemory.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedpointer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsignalmapper.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsignaltransition.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsize.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsocketnotifier.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsortfilterproxymodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstack.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstandardpaths.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstatemachine.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstorageinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstring.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringbuilder.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringlist.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringlistmodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringmatcher.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsysinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsystemdetection.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsystemsemaphore.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtcore-config.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtcoreversion.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtemporarydir.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtemporaryfile.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextboundaryfinder.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextcodec.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextstream.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthread.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthreadpool.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthreadstorage.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimeline.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimezone.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtranslator.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtypeinfo.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtypetraits.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qurl.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qurlquery.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/quuid.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvariant.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qvariantanimation.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvarlengtharray.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvector.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qversionnumber.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qversiontagging.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qwaitcondition.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qwineventnotifier.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qxmlstream.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/QBrush
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qbrush.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qcolor.h
@@ -1873,6 +2769,15 @@ qt_app/CMakeFiles/qt_app_node.dir/src/Pawn.cpp.o
  /home/yu/catkin_ws/src/qt_app/src/Game.h
  /home/yu/catkin_ws/src/qt_app/src/Pawn.cpp
  /home/yu/catkin_ws/src/qt_app/src/Pawn.h
+ /home/yu/catkin_ws/src/qt_app/src/RobotThread.h
+ /opt/ros/melodic/include/geometry_msgs/Point.h
+ /opt/ros/melodic/include/geometry_msgs/Pose.h
+ /opt/ros/melodic/include/geometry_msgs/PoseWithCovariance.h
+ /opt/ros/melodic/include/geometry_msgs/Quaternion.h
+ /opt/ros/melodic/include/geometry_msgs/Twist.h
+ /opt/ros/melodic/include/geometry_msgs/TwistWithCovariance.h
+ /opt/ros/melodic/include/geometry_msgs/Vector3.h
+ /opt/ros/melodic/include/nav_msgs/Odometry.h
  /opt/ros/melodic/include/ros/advertise_options.h
  /opt/ros/melodic/include/ros/advertise_service_options.h
  /opt/ros/melodic/include/ros/assert.h
@@ -1894,6 +2799,7 @@ qt_app/CMakeFiles/qt_app_node.dir/src/Pawn.cpp.o
  /opt/ros/melodic/include/ros/message_operations.h
  /opt/ros/melodic/include/ros/message_traits.h
  /opt/ros/melodic/include/ros/names.h
+ /opt/ros/melodic/include/ros/network.h
  /opt/ros/melodic/include/ros/node_handle.h
  /opt/ros/melodic/include/ros/param.h
  /opt/ros/melodic/include/ros/parameter_adapter.h
@@ -1929,81 +2835,197 @@ qt_app/CMakeFiles/qt_app_node.dir/src/Pawn.cpp.o
  /opt/ros/melodic/include/ros/wall_timer.h
  /opt/ros/melodic/include/ros/wall_timer_options.h
  /opt/ros/melodic/include/rosconsole/macros_generated.h
+ /opt/ros/melodic/include/std_msgs/Header.h
  /opt/ros/melodic/include/std_msgs/String.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QDebug
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QMutex
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QObject
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QScopedPointer
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QStringList
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QThread
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QTime
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QtCore
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QtCoreDepends
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstracteventdispatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractitemmodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractnativeeventfilter.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractproxymodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractstate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstracttransition.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qalgorithms.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qanimationgroup.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydataops.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydatapointer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_bootstrap.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_cxx11.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_msvc.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbasicatomic.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbasictimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbitarray.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbuffer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearray.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearraylist.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearraymatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcache.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qchar.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcollator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcommandlineoption.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcommandlineparser.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcompilerdetection.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qconfig-bootstrapped.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qconfig.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcontainerfwd.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcontiguouscache.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcoreapplication.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcoreevent.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcryptographichash.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdatastream.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdatetime.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdeadlinetimer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdebug.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdir.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdiriterator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeasingcurve.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qelapsedtimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qendian.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeventloop.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeventtransition.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qexception.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfactoryinterface.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qfile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qfiledevice.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfileinfo.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfileselector.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfilesystemwatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfinalstate.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qflags.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuture.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfutureinterface.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuturesynchronizer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuturewatcher.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qgenericatomic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qglobal.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qglobalstatic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qhash.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qhashfunctions.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qhistorystate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qidentityproxymodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qiodevice.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qisenum.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qitemselectionmodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qiterator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonarray.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsondocument.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonobject.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonvalue.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlibrary.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlibraryinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qline.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlinkedlist.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlist.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlocale.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlockfile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlogging.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qloggingcategory.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmap.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmargins.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmath.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmessageauthenticationcode.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmetaobject.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmetatype.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimedata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimedatabase.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimetype.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmutex.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qnamespace.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qnumeric.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobject.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobject_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectcleanuphandler.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectdefs.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectdefs_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qoperatingsystemversion.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qpair.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qparallelanimationgroup.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpauseanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qplugin.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpluginloader.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qpoint.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpointer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qprocess.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qprocessordetection.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpropertyanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qqueue.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qreadwritelock.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qrect.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qrefcount.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qregexp.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qregularexpression.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qresource.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qresultstore.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qrunnable.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsavefile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qscopedpointer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qscopedvaluerollback.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsemaphore.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsequentialanimationgroup.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qset.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsettings.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qshareddata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedmemory.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedpointer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsignalmapper.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsignaltransition.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsize.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsocketnotifier.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsortfilterproxymodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstack.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstandardpaths.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstatemachine.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstorageinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstring.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringbuilder.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringlist.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringlistmodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringmatcher.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsysinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsystemdetection.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsystemsemaphore.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtcore-config.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtcoreversion.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtemporarydir.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtemporaryfile.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextboundaryfinder.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextcodec.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextstream.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthread.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthreadpool.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthreadstorage.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimeline.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimezone.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtranslator.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtypeinfo.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtypetraits.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qurl.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qurlquery.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/quuid.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvariant.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qvariantanimation.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvarlengtharray.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvector.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qversionnumber.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qversiontagging.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qwaitcondition.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qwineventnotifier.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qxmlstream.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/QBrush
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qbrush.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qcolor.h
@@ -2522,6 +3544,15 @@ qt_app/CMakeFiles/qt_app_node.dir/src/Queen.cpp.o
  /home/yu/catkin_ws/src/qt_app/src/Game.h
  /home/yu/catkin_ws/src/qt_app/src/Queen.cpp
  /home/yu/catkin_ws/src/qt_app/src/Queen.h
+ /home/yu/catkin_ws/src/qt_app/src/RobotThread.h
+ /opt/ros/melodic/include/geometry_msgs/Point.h
+ /opt/ros/melodic/include/geometry_msgs/Pose.h
+ /opt/ros/melodic/include/geometry_msgs/PoseWithCovariance.h
+ /opt/ros/melodic/include/geometry_msgs/Quaternion.h
+ /opt/ros/melodic/include/geometry_msgs/Twist.h
+ /opt/ros/melodic/include/geometry_msgs/TwistWithCovariance.h
+ /opt/ros/melodic/include/geometry_msgs/Vector3.h
+ /opt/ros/melodic/include/nav_msgs/Odometry.h
  /opt/ros/melodic/include/ros/advertise_options.h
  /opt/ros/melodic/include/ros/advertise_service_options.h
  /opt/ros/melodic/include/ros/assert.h
@@ -2543,6 +3574,7 @@ qt_app/CMakeFiles/qt_app_node.dir/src/Queen.cpp.o
  /opt/ros/melodic/include/ros/message_operations.h
  /opt/ros/melodic/include/ros/message_traits.h
  /opt/ros/melodic/include/ros/names.h
+ /opt/ros/melodic/include/ros/network.h
  /opt/ros/melodic/include/ros/node_handle.h
  /opt/ros/melodic/include/ros/param.h
  /opt/ros/melodic/include/ros/parameter_adapter.h
@@ -2578,81 +3610,197 @@ qt_app/CMakeFiles/qt_app_node.dir/src/Queen.cpp.o
  /opt/ros/melodic/include/ros/wall_timer.h
  /opt/ros/melodic/include/ros/wall_timer_options.h
  /opt/ros/melodic/include/rosconsole/macros_generated.h
+ /opt/ros/melodic/include/std_msgs/Header.h
  /opt/ros/melodic/include/std_msgs/String.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QDebug
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QMutex
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QObject
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QScopedPointer
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QStringList
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QThread
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QTime
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QtCore
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QtCoreDepends
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstracteventdispatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractitemmodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractnativeeventfilter.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractproxymodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractstate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstracttransition.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qalgorithms.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qanimationgroup.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydataops.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydatapointer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_bootstrap.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_cxx11.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_msvc.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbasicatomic.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbasictimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbitarray.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbuffer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearray.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearraylist.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearraymatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcache.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qchar.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcollator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcommandlineoption.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcommandlineparser.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcompilerdetection.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qconfig-bootstrapped.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qconfig.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcontainerfwd.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcontiguouscache.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcoreapplication.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcoreevent.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcryptographichash.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdatastream.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdatetime.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdeadlinetimer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdebug.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdir.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdiriterator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeasingcurve.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qelapsedtimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qendian.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeventloop.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeventtransition.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qexception.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfactoryinterface.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qfile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qfiledevice.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfileinfo.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfileselector.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfilesystemwatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfinalstate.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qflags.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuture.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfutureinterface.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuturesynchronizer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuturewatcher.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qgenericatomic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qglobal.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qglobalstatic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qhash.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qhashfunctions.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qhistorystate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qidentityproxymodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qiodevice.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qisenum.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qitemselectionmodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qiterator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonarray.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsondocument.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonobject.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonvalue.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlibrary.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlibraryinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qline.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlinkedlist.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlist.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlocale.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlockfile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlogging.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qloggingcategory.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmap.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmargins.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmath.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmessageauthenticationcode.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmetaobject.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmetatype.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimedata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimedatabase.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimetype.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmutex.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qnamespace.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qnumeric.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobject.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobject_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectcleanuphandler.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectdefs.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectdefs_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qoperatingsystemversion.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qpair.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qparallelanimationgroup.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpauseanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qplugin.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpluginloader.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qpoint.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpointer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qprocess.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qprocessordetection.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpropertyanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qqueue.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qreadwritelock.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qrect.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qrefcount.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qregexp.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qregularexpression.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qresource.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qresultstore.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qrunnable.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsavefile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qscopedpointer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qscopedvaluerollback.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsemaphore.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsequentialanimationgroup.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qset.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsettings.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qshareddata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedmemory.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedpointer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsignalmapper.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsignaltransition.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsize.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsocketnotifier.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsortfilterproxymodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstack.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstandardpaths.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstatemachine.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstorageinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstring.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringbuilder.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringlist.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringlistmodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringmatcher.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsysinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsystemdetection.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsystemsemaphore.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtcore-config.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtcoreversion.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtemporarydir.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtemporaryfile.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextboundaryfinder.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextcodec.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextstream.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthread.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthreadpool.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthreadstorage.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimeline.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimezone.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtranslator.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtypeinfo.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtypetraits.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qurl.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qurlquery.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/quuid.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvariant.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qvariantanimation.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvarlengtharray.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvector.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qversionnumber.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qversiontagging.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qwaitcondition.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qwineventnotifier.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qxmlstream.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/QBrush
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qbrush.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qcolor.h
@@ -2699,18 +3847,17 @@ qt_app/CMakeFiles/qt_app_node.dir/src/Queen.cpp.o
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qtwidgets-config.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qtwidgetsglobal.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qwidget.h
-qt_app/CMakeFiles/qt_app_node.dir/src/Rook.cpp.o
- /home/yu/catkin_ws/src/qt_app/include/qt_app/Bishop.h
- /home/yu/catkin_ws/src/qt_app/include/qt_app/ChessBoard.h
- /home/yu/catkin_ws/src/qt_app/include/qt_app/King.h
- /home/yu/catkin_ws/src/qt_app/include/qt_app/Knight.h
- /home/yu/catkin_ws/src/qt_app/include/qt_app/Pawn.h
- /home/yu/catkin_ws/src/qt_app/include/qt_app/Queen.h
- /home/yu/catkin_ws/src/qt_app/src/ChessBox.h
- /home/yu/catkin_ws/src/qt_app/src/ChessPiece.h
- /home/yu/catkin_ws/src/qt_app/src/Game.h
- /home/yu/catkin_ws/src/qt_app/src/Rook.cpp
- /home/yu/catkin_ws/src/qt_app/src/Rook.h
+qt_app/CMakeFiles/qt_app_node.dir/src/RobotThread.cpp.o
+ /home/yu/catkin_ws/src/qt_app/src/RobotThread.cpp
+ /home/yu/catkin_ws/src/qt_app/src/RobotThread.h
+ /opt/ros/melodic/include/geometry_msgs/Point.h
+ /opt/ros/melodic/include/geometry_msgs/Pose.h
+ /opt/ros/melodic/include/geometry_msgs/PoseWithCovariance.h
+ /opt/ros/melodic/include/geometry_msgs/Quaternion.h
+ /opt/ros/melodic/include/geometry_msgs/Twist.h
+ /opt/ros/melodic/include/geometry_msgs/TwistWithCovariance.h
+ /opt/ros/melodic/include/geometry_msgs/Vector3.h
+ /opt/ros/melodic/include/nav_msgs/Odometry.h
  /opt/ros/melodic/include/ros/advertise_options.h
  /opt/ros/melodic/include/ros/advertise_service_options.h
  /opt/ros/melodic/include/ros/assert.h
@@ -2732,6 +3879,7 @@ qt_app/CMakeFiles/qt_app_node.dir/src/Rook.cpp.o
  /opt/ros/melodic/include/ros/message_operations.h
  /opt/ros/melodic/include/ros/message_traits.h
  /opt/ros/melodic/include/ros/names.h
+ /opt/ros/melodic/include/ros/network.h
  /opt/ros/melodic/include/ros/node_handle.h
  /opt/ros/melodic/include/ros/param.h
  /opt/ros/melodic/include/ros/parameter_adapter.h
@@ -2767,81 +3915,464 @@ qt_app/CMakeFiles/qt_app_node.dir/src/Rook.cpp.o
  /opt/ros/melodic/include/ros/wall_timer.h
  /opt/ros/melodic/include/ros/wall_timer_options.h
  /opt/ros/melodic/include/rosconsole/macros_generated.h
+ /opt/ros/melodic/include/std_msgs/Header.h
  /opt/ros/melodic/include/std_msgs/String.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h
- /usr/include/aarch64-linux-gnu/qt5/QtCore/QDebug
- /usr/include/aarch64-linux-gnu/qt5/QtCore/QTime
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QMutex
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QObject
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QScopedPointer
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QStringList
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QThread
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QtCore
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QtCoreDepends
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstracteventdispatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractitemmodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractnativeeventfilter.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractproxymodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractstate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstracttransition.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qalgorithms.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qanimationgroup.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydataops.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydatapointer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_bootstrap.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_cxx11.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_msvc.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbasicatomic.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbasictimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbitarray.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbuffer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearray.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearraylist.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearraymatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcache.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qchar.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcollator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcommandlineoption.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcommandlineparser.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcompilerdetection.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qconfig-bootstrapped.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qconfig.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcontainerfwd.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcontiguouscache.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcoreapplication.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qcoreevent.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcryptographichash.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdatastream.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdatetime.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdeadlinetimer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qdebug.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdir.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdiriterator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeasingcurve.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qelapsedtimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qendian.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeventloop.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeventtransition.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qexception.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfactoryinterface.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qfile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qfiledevice.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfileinfo.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfileselector.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfilesystemwatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfinalstate.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qflags.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuture.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfutureinterface.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuturesynchronizer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuturewatcher.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qgenericatomic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qglobal.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qglobalstatic.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qhash.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qhashfunctions.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qhistorystate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qidentityproxymodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qiodevice.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qisenum.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qitemselectionmodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qiterator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonarray.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsondocument.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonobject.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonvalue.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlibrary.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlibraryinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qline.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlinkedlist.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlist.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlocale.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlockfile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qlogging.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qloggingcategory.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmap.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmargins.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmath.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmessageauthenticationcode.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmetaobject.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmetatype.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimedata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimedatabase.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimetype.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qmutex.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qnamespace.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qnumeric.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobject.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobject_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectcleanuphandler.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectdefs.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectdefs_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qoperatingsystemversion.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qpair.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qparallelanimationgroup.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpauseanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qplugin.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpluginloader.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qpoint.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpointer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qprocess.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qprocessordetection.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpropertyanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qqueue.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qreadwritelock.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qrect.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qrefcount.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qregexp.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qregularexpression.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qresource.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qresultstore.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qrunnable.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsavefile.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qscopedpointer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qscopedvaluerollback.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsemaphore.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsequentialanimationgroup.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qset.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsettings.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qshareddata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedmemory.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedpointer.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsignalmapper.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsignaltransition.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsize.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsocketnotifier.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsortfilterproxymodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstack.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstandardpaths.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstatemachine.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstorageinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstring.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringbuilder.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringlist.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringlistmodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringmatcher.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsysinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qsystemdetection.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsystemsemaphore.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtcore-config.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtcoreversion.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtemporarydir.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtemporaryfile.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextboundaryfinder.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextcodec.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextstream.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthread.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthreadpool.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthreadstorage.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimeline.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimezone.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtranslator.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qtypeinfo.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtypetraits.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qurl.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qurlquery.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/quuid.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvariant.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qvariantanimation.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvarlengtharray.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qvector.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qversionnumber.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/qversiontagging.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qwaitcondition.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qwineventnotifier.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qxmlstream.h
+qt_app/CMakeFiles/qt_app_node.dir/src/Rook.cpp.o
+ /home/yu/catkin_ws/src/qt_app/include/qt_app/Bishop.h
+ /home/yu/catkin_ws/src/qt_app/include/qt_app/ChessBoard.h
+ /home/yu/catkin_ws/src/qt_app/include/qt_app/King.h
+ /home/yu/catkin_ws/src/qt_app/include/qt_app/Knight.h
+ /home/yu/catkin_ws/src/qt_app/include/qt_app/Pawn.h
+ /home/yu/catkin_ws/src/qt_app/include/qt_app/Queen.h
+ /home/yu/catkin_ws/src/qt_app/src/ChessBox.h
+ /home/yu/catkin_ws/src/qt_app/src/ChessPiece.h
+ /home/yu/catkin_ws/src/qt_app/src/Game.h
+ /home/yu/catkin_ws/src/qt_app/src/RobotThread.h
+ /home/yu/catkin_ws/src/qt_app/src/Rook.cpp
+ /home/yu/catkin_ws/src/qt_app/src/Rook.h
+ /opt/ros/melodic/include/geometry_msgs/Point.h
+ /opt/ros/melodic/include/geometry_msgs/Pose.h
+ /opt/ros/melodic/include/geometry_msgs/PoseWithCovariance.h
+ /opt/ros/melodic/include/geometry_msgs/Quaternion.h
+ /opt/ros/melodic/include/geometry_msgs/Twist.h
+ /opt/ros/melodic/include/geometry_msgs/TwistWithCovariance.h
+ /opt/ros/melodic/include/geometry_msgs/Vector3.h
+ /opt/ros/melodic/include/nav_msgs/Odometry.h
+ /opt/ros/melodic/include/ros/advertise_options.h
+ /opt/ros/melodic/include/ros/advertise_service_options.h
+ /opt/ros/melodic/include/ros/assert.h
+ /opt/ros/melodic/include/ros/builtin_message_traits.h
+ /opt/ros/melodic/include/ros/common.h
+ /opt/ros/melodic/include/ros/console.h
+ /opt/ros/melodic/include/ros/console_backend.h
+ /opt/ros/melodic/include/ros/datatypes.h
+ /opt/ros/melodic/include/ros/duration.h
+ /opt/ros/melodic/include/ros/exception.h
+ /opt/ros/melodic/include/ros/exceptions.h
+ /opt/ros/melodic/include/ros/forwards.h
+ /opt/ros/melodic/include/ros/init.h
+ /opt/ros/melodic/include/ros/macros.h
+ /opt/ros/melodic/include/ros/master.h
+ /opt/ros/melodic/include/ros/message.h
+ /opt/ros/melodic/include/ros/message_event.h
+ /opt/ros/melodic/include/ros/message_forward.h
+ /opt/ros/melodic/include/ros/message_operations.h
+ /opt/ros/melodic/include/ros/message_traits.h
+ /opt/ros/melodic/include/ros/names.h
+ /opt/ros/melodic/include/ros/network.h
+ /opt/ros/melodic/include/ros/node_handle.h
+ /opt/ros/melodic/include/ros/param.h
+ /opt/ros/melodic/include/ros/parameter_adapter.h
+ /opt/ros/melodic/include/ros/platform.h
+ /opt/ros/melodic/include/ros/publisher.h
+ /opt/ros/melodic/include/ros/rate.h
+ /opt/ros/melodic/include/ros/ros.h
+ /opt/ros/melodic/include/ros/roscpp_serialization_macros.h
+ /opt/ros/melodic/include/ros/rostime_decl.h
+ /opt/ros/melodic/include/ros/serialization.h
+ /opt/ros/melodic/include/ros/serialized_message.h
+ /opt/ros/melodic/include/ros/service.h
+ /opt/ros/melodic/include/ros/service_callback_helper.h
+ /opt/ros/melodic/include/ros/service_client.h
+ /opt/ros/melodic/include/ros/service_client_options.h
+ /opt/ros/melodic/include/ros/service_server.h
+ /opt/ros/melodic/include/ros/service_traits.h
+ /opt/ros/melodic/include/ros/single_subscriber_publisher.h
+ /opt/ros/melodic/include/ros/spinner.h
+ /opt/ros/melodic/include/ros/static_assert.h
+ /opt/ros/melodic/include/ros/steady_timer.h
+ /opt/ros/melodic/include/ros/steady_timer_options.h
+ /opt/ros/melodic/include/ros/subscribe_options.h
+ /opt/ros/melodic/include/ros/subscriber.h
+ /opt/ros/melodic/include/ros/subscription_callback_helper.h
+ /opt/ros/melodic/include/ros/this_node.h
+ /opt/ros/melodic/include/ros/time.h
+ /opt/ros/melodic/include/ros/timer.h
+ /opt/ros/melodic/include/ros/timer_options.h
+ /opt/ros/melodic/include/ros/topic.h
+ /opt/ros/melodic/include/ros/transport_hints.h
+ /opt/ros/melodic/include/ros/types.h
+ /opt/ros/melodic/include/ros/wall_timer.h
+ /opt/ros/melodic/include/ros/wall_timer_options.h
+ /opt/ros/melodic/include/rosconsole/macros_generated.h
+ /opt/ros/melodic/include/std_msgs/Header.h
+ /opt/ros/melodic/include/std_msgs/String.h
+ /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
+ /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QDebug
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QMutex
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QObject
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QScopedPointer
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QStringList
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QThread
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QTime
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QtCore
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QtCoreDepends
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstracteventdispatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractitemmodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractnativeeventfilter.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractproxymodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstractstate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qabstracttransition.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qalgorithms.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qanimationgroup.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydataops.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qarraydatapointer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_bootstrap.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_cxx11.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qatomic_msvc.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbasicatomic.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbasictimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbitarray.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbuffer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearray.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearraylist.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qbytearraymatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcache.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qchar.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcollator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcommandlineoption.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcommandlineparser.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcompilerdetection.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qconfig-bootstrapped.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qconfig.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcontainerfwd.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcontiguouscache.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcoreapplication.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcoreevent.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qcryptographichash.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdatastream.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdatetime.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdeadlinetimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdebug.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdir.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qdiriterator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeasingcurve.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qelapsedtimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qendian.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeventloop.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qeventtransition.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qexception.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfactoryinterface.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfile.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfiledevice.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfileinfo.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfileselector.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfilesystemwatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfinalstate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qflags.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuture.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfutureinterface.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuturesynchronizer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qfuturewatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qgenericatomic.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qglobal.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qglobalstatic.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qhash.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qhashfunctions.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qhistorystate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qidentityproxymodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qiodevice.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qisenum.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qitemselectionmodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qiterator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonarray.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsondocument.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonobject.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qjsonvalue.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlibrary.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlibraryinfo.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qline.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlinkedlist.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlist.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlocale.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlockfile.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qlogging.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qloggingcategory.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmap.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmargins.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmath.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmessageauthenticationcode.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmetaobject.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmetatype.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimedata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimedatabase.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmimetype.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qmutex.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qnamespace.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qnumeric.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qobject.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qobject_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectcleanuphandler.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectdefs.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qobjectdefs_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qoperatingsystemversion.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpair.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qparallelanimationgroup.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpauseanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qplugin.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpluginloader.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpoint.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpointer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qprocess.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qprocessordetection.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qpropertyanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qqueue.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qreadwritelock.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qrect.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qrefcount.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qregexp.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qregularexpression.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qresource.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qresultstore.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qrunnable.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsavefile.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qscopedpointer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qscopedvaluerollback.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsemaphore.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsequentialanimationgroup.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qset.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsettings.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qshareddata.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedmemory.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedpointer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsignalmapper.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsignaltransition.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsize.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsocketnotifier.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsortfilterproxymodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstack.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstandardpaths.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstatemachine.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstorageinfo.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstring.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringbuilder.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringlist.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringlistmodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qstringmatcher.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsysinfo.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsystemdetection.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qsystemsemaphore.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtcore-config.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtcoreversion.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtemporarydir.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtemporaryfile.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextboundaryfinder.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextcodec.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtextstream.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthread.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthreadpool.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qthreadstorage.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimeline.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimer.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtimezone.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtranslator.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtypeinfo.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qtypetraits.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qurl.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qurlquery.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/quuid.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qvariant.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qvariantanimation.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qvarlengtharray.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qvector.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qversionnumber.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qversiontagging.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qwaitcondition.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qwineventnotifier.h
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/qxmlstream.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/QBrush
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qbrush.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qcolor.h
