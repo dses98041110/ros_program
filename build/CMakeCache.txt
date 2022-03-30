@@ -118,7 +118,7 @@ CATKIN_SKIP_TESTING:BOOL=OFF
 CATKIN_SYMLINK_INSTALL:BOOL=OFF
 
 //List of ';' separated packages to build
-CATKIN_WHITELIST_PACKAGES:STRING=qt_app
+CATKIN_WHITELIST_PACKAGES:STRING=opencv_zed_ros
 
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
@@ -394,6 +394,9 @@ CUDA_cusparse_LIBRARY:FILEPATH=/usr/local/cuda-10.2/lib64/libcusparse.so
 
 //"nppc" library
 CUDA_nppc_LIBRARY:FILEPATH=/usr/local/cuda-10.2/lib64/libnppc.so
+
+//"nppi" library
+CUDA_nppi_LIBRARY:FILEPATH=CUDA_nppi_LIBRARY-NOTFOUND
 
 //"nppial" library
 CUDA_nppial_LIBRARY:FILEPATH=/usr/local/cuda-10.2/lib64/libnppial.so
@@ -791,7 +794,7 @@ kdl_parser_DIR:PATH=/opt/ros/melodic/share/kdl_parser/cmake
 laser_geometry_DIR:PATH=/opt/ros/melodic/share/laser_geometry/cmake
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/melodic/lib/libxmlrpcpp.so
+lib:FILEPATH=/opt/ros/melodic/lib/libbondcpp.so
 
 //The directory containing a CMake configuration file for map_msgs.
 map_msgs_DIR:PATH=/opt/ros/melodic/share/map_msgs/cmake
@@ -846,6 +849,12 @@ nav_msgs_DIR:PATH=/opt/ros/melodic/share/nav_msgs/cmake
 
 //The directory containing a CMake configuration file for nodelet.
 nodelet_DIR:PATH=/opt/ros/melodic/share/nodelet/cmake
+
+//Value Computed by CMake
+opencv_zed_ros_BINARY_DIR:STATIC=/home/yu/catkin_ws/build/opencv_zed_ros
+
+//Value Computed by CMake
+opencv_zed_ros_SOURCE_DIR:STATIC=/home/yu/catkin_ws/src/opencv_zed_ros
 
 //The directory containing a CMake configuration file for pluginlib.
 pluginlib_DIR:PATH=/opt/ros/melodic/share/pluginlib/cmake
@@ -1147,6 +1156,8 @@ zed_wrapper_SOURCE_DIR:STATIC=/home/yu/catkin_ws/src/zed-ros-wrapper/zed_wrapper
 BLAS_goto2_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: BLAS_openblas_LIBRARY
 BLAS_openblas_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: BLAS_openblas_WORKS
+BLAS_openblas_WORKS-ADVANCED:INTERNAL=1
 //Have function sgemm_
 BLAS_openblas_WORKS:INTERNAL=1
 //ADVANCED property for variable: Boost_ATOMIC_LIBRARY_DEBUG
@@ -1410,6 +1421,8 @@ CUDA_cusparse_LIBRARY-ADVANCED:INTERNAL=1
 CUDA_make2cmake:INTERNAL=/usr/share/cmake-3.10/Modules/FindCUDA/make2cmake.cmake
 //ADVANCED property for variable: CUDA_nppc_LIBRARY
 CUDA_nppc_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CUDA_nppi_LIBRARY
+CUDA_nppi_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDA_nppial_LIBRARY
 CUDA_nppial_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDA_nppicc_LIBRARY
@@ -1437,7 +1450,7 @@ CUDA_parse_cubin:INTERNAL=/usr/share/cmake-3.10/Modules/FindCUDA/parse_cubin.cma
 //Location of run_nvcc.cmake
 CUDA_run_nvcc:INTERNAL=/usr/share/cmake-3.10/Modules/FindCUDA/run_nvcc.cmake
 //Details about finding CUDA
-FIND_PACKAGE_MESSAGE_DETAILS_CUDA:INTERNAL=[/usr/local/cuda-10.2][/usr/local/cuda-10.2/bin/nvcc][/usr/local/cuda-10.2/include][/usr/local/cuda-10.2/lib64/libcudart.so][v10.2()]
+FIND_PACKAGE_MESSAGE_DETAILS_CUDA:INTERNAL=[/usr/local/cuda-10.2][/usr/local/cuda-10.2/bin/nvcc][/usr/local/cuda-10.2/include][/usr/local/cuda-10.2/lib64/libcudart.so][v10.2(10.2)]
 //Details about finding OpenCV
 FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/usr][v4.5.0()]
 //Details about finding OpenMP

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(rosOpenCV)
+project(opencv_zed_ros)
 option(LINK_SHARED_ZED "Link with the ZED SDK shared executable" ON)
 
 if (NOT LINK_SHARED_ZED AND MSVC)
@@ -123,7 +123,7 @@ ENDIF()
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES rosOpenCV
+#  LIBRARIES opencv_zed_ros
 #  CATKIN_DEPENDS cv_bridge image_transport roscpp sensor_msgs std_msgs
 #  DEPENDS system_lib
 )
@@ -144,7 +144,7 @@ include_directories(
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/rosOpenCV.cpp
+#   src/${PROJECT_NAME}/opencv_zed_ros.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -155,7 +155,7 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/rosOpenCV_node.cpp)
+# add_executable(${PROJECT_NAME}_node src/opencv_zed_ros_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -219,7 +219,7 @@ include_directories(
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_rosOpenCV.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_opencv_zed_ros.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
@@ -233,7 +233,7 @@ link_directories(${CUDA_LIBRARY_DIRS})
 
 
 
-add_executable(rosOpenCV ./src/rosOpenCV.cpp)
+add_executable(opencv_zed_ros ./src/opencv_zed_ros.cpp)
 
 
 add_definitions(-std=c++14 -O3)

@@ -1,0 +1,6 @@
+<launch>
+	<include file="$(find subscriber_mini_bot)/launch/start_demo.launch" />
+	<node name="opencv_zed_ros" pkg="opencv_zed_ros" type="opencv_zed_ros" launch-prefix="gnome-terminal -x" />
+	<node name="qt_app_node" pkg="qt_app" type="qt_app_node" launch-prefix="gnome-terminal -x" />
+	<node name="test_mover" pkg="minibot_control" type="test_mover" launch-prefix="gnome-terminal -x" />
+</launch>
