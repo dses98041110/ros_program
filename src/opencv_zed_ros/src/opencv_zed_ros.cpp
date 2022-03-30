@@ -221,7 +221,7 @@ void imageSubtract(cv::Mat &image1, cv::Mat &image2)
 	absFrameDifferece = cv::abs(frameDifference);
 	//位深的改变
 	absFrameDifferece.convertTo(absFrameDifferece, CV_8UC1, 1, 0);
-	cv::imshow("absFrameDifferece", absFrameDifferece);
+	//cv::imshow("absFrameDifferece", absFrameDifferece);
 	cv::Mat segmentation;
 	
 	//阈值处理（这一步很关键，要调好二值化的值）
@@ -235,7 +235,7 @@ void imageSubtract(cv::Mat &image1, cv::Mat &image2)
 	cv::morphologyEx(segmentation, segmentation, cv::MORPH_CLOSE, morphologyKernel, cv::Point(-1, -1), 2, cv::BORDER_REPLICATE);
 
 	//显示二值化图片
-	cv::imshow("segmentation", segmentation);
+	//cv::imshow("segmentation", segmentation);
 
 	//找边界
 	std::vector< std::vector<cv::Point> > contours;
