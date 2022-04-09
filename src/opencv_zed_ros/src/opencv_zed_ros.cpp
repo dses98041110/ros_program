@@ -84,13 +84,13 @@ int main(int argc, char** argv)
 		// Only the headers and pointer to the sl::Mat are copied, not the data itself
 		Mat image_zed(new_width, new_height, MAT_TYPE::U8_C4);
 		cv::Mat image_ocv = slMat2cvMat(image_zed);
-		cv::Rect rect(257,40,202,202);
+		cv::Rect rect(260,50,200,200);
 		cv::Mat result=image_ocv(rect);
 
 		// Loop until 'q' is pressed
 		char key = ' ';
 		cv::Point2i pt(-1,-1);//assume initial point
-		//cv::namedWindow("Image");
+		cv::namedWindow("Image");
 		//cv::setMouseCallback("Image", onMouse, (void*)&pt);
 		zed.grab(runtime_parameters);
 		zed.retrieveImage(image_zed, VIEW::LEFT, MEM::CPU, new_image_size);
@@ -106,8 +106,8 @@ int main(int argc, char** argv)
 
 
 			    // Display image and depth using cv:Mat which share sl:Mat data
-			    //zed.retrieveImage(image_zed, VIEW::LEFT, MEM::CPU, new_image_size);
-			    //cv::imshow("Image", result);
+			    zed.retrieveImage(image_zed, VIEW::LEFT, MEM::CPU, new_image_size);
+			    cv::imshow("Image", image_ocv);
 
 			
 			    // Handle key event
