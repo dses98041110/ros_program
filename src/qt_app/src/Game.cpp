@@ -1266,6 +1266,7 @@ int Game::minimax(int pieceInSquare[64], int target_position,int alpha,int beta,
 
 void Game::blackMove(int current_position,int target_position){
     pieceToMove=collection[7-(current_position>>3)][7-(current_position%8)]->currentPiece;
+    	qDebug()<<"GetCategory:"<<pieceToMove->getCategory();
     ChessBox* targetBox=collection[7-(target_position>>3)][7-(target_position%8)];
     if(targetBox->getHasChessPiece()){
         targetBox->currentPiece->setIsPlaced(false);
