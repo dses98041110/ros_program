@@ -118,7 +118,7 @@ CATKIN_SKIP_TESTING:BOOL=OFF
 CATKIN_SYMLINK_INSTALL:BOOL=OFF
 
 //List of ';' separated packages to build
-CATKIN_WHITELIST_PACKAGES:STRING=qt_app
+CATKIN_WHITELIST_PACKAGES:STRING=minibot_control
 
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
@@ -607,6 +607,9 @@ controller_manager_DIR:PATH=/opt/ros/melodic/share/controller_manager/cmake
 //The directory containing a CMake configuration file for controller_manager_msgs.
 controller_manager_msgs_DIR:PATH=/opt/ros/melodic/share/controller_manager_msgs/cmake
 
+//The directory containing a CMake configuration file for cospy.
+cospy_DIR:PATH=cospy_DIR-NOTFOUND
+
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/melodic/share/cpp_common/cmake
 
@@ -794,7 +797,7 @@ kdl_parser_DIR:PATH=/opt/ros/melodic/share/kdl_parser/cmake
 laser_geometry_DIR:PATH=/opt/ros/melodic/share/laser_geometry/cmake
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/melodic/lib/libxmlrpcpp.so
+lib:FILEPATH=/opt/ros/melodic/lib/libtf2.so
 
 //The directory containing a CMake configuration file for map_msgs.
 map_msgs_DIR:PATH=/opt/ros/melodic/share/map_msgs/cmake
@@ -864,6 +867,12 @@ qt_app_BINARY_DIR:STATIC=/home/yu/catkin_ws/build/qt_app
 
 //Value Computed by CMake
 qt_app_SOURCE_DIR:STATIC=/home/yu/catkin_ws/src/qt_app
+
+//Value Computed by CMake
+qt_gui_BINARY_DIR:STATIC=/home/yu/catkin_ws/build/qt_gui
+
+//Value Computed by CMake
+qt_gui_SOURCE_DIR:STATIC=/home/yu/catkin_ws/src/qt_gui
 
 //The directory containing a CMake configuration file for realtime_tools.
 realtime_tools_DIR:PATH=/opt/ros/melodic/share/realtime_tools/cmake

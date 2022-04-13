@@ -2,21 +2,34 @@ cmake_minimum_required(VERSION 3.0.2)
 project(qt_gui)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-# add_compile_options(-std=c++11)
+add_compile_options(-std=c++11)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  cospy
   roscpp
   std_msgs
 )
+find_package(Qt5  REQUIRED COMPONENTS  Widgets  )
+find_package(Qt5Core REQUIRED)
 
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
+set(SOURCES
+	src/mainwindow.cpp
+	src/main.cpp
+	src/RobotThread.cpp
+)
 
+set(FORMS
+  src/mainwindow.ui
+)
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
 ## See http://ros.org/doc/api/catkin/html/user_guide/setup_dot_py.html
@@ -204,3 +217,11 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+add_executable(${PROJECT_NAME}_node ${SOURCES} ${FORMS})
+
+target_link_libraries(${PROJECT_NAME}_node
+   ${catkin_LIBRARIES}
+)
+
+target_link_libraries(${PROJECT_NAME}_node Qt5::Widgets)

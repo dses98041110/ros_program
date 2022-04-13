@@ -567,5 +567,4 @@ c2df5def68aedb443bf6ed141f713ce5 /home/yu/catkin_ws/devel/share/roseus/ros/zed_i
 805101f099c3a24217b452d685e817ab /home/yu/catkin_ws/devel/share/roseus/ros/zed_interfaces/srv/stop_svo_recording.l
 4837988083c274fc5ab4a5602fe86fca /home/yu/catkin_ws/devel/share/roseus/ros/zed_interfaces/srv/toggle_led.l
 612d156493cf3d36a469fdeda7fd0236 CMakeFiles/clean_test_results
-d9206f04214ef41c91f3f5cc921ab828 qt_app/CMakeFiles/qt_app_node_autogen
 4c611265218219f41099bb7d1f0befb3 qt_app/qrc_piece.cpp

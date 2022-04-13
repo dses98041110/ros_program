@@ -39,18 +39,24 @@ cv::cuda::GpuMat slMat2cvMatGPU(Mat& input);
 void printHelp();
 void onMouse(int evt, int x, int y, int flags, void* param);
 void imageSubtract(cv::Mat &image1, cv::Mat &image2);
+void chatterCallback(const std_msgs::String::ConstPtr& msg);
+
 std_msgs::String str_chess_position;
 std::stringstream ss;
+Camera zed;
+int state=0;
+cv::Mat before;
+cv::Mat after;
 int main(int argc, char** argv)
 {
 		ros::init(argc, argv, "image_publisher");
 		ros::NodeHandle nh;
 		ros::Publisher pub_chess = nh.advertise<std_msgs::String>("chess_position", 5);  
-
+		ros::Subscriber sub = nh.subscribe("chatter", 1000, chatterCallback);
 
 
 		// Create a ZED camera object
-		Camera zed;
+
 
 		// Set configuration parameters
 		InitParameters init_params;
@@ -91,13 +97,12 @@ int main(int argc, char** argv)
 		char key = ' ';
 		cv::Point2i pt(-1,-1);//assume initial point
 		cv::namedWindow("Image");
-		//cv::setMouseCallback("Image", onMouse, (void*)&pt);
-		zed.grab(runtime_parameters);
-		zed.retrieveImage(image_zed, VIEW::LEFT, MEM::CPU, new_image_size);
-		cv::Mat before;
-		cv::Mat after;
-		result.copyTo(before);
-		cv::imshow("before",result);
+		cv::setMouseCallback("Image", onMouse, (void*)&pt);
+//		zed.grab(runtime_parameters);
+//		zed.retrieveImage(image_zed, VIEW::LEFT, MEM::CPU, new_image_size);
+
+//		result.copyTo(before);
+//		cv::imshow("before",result);
 
 
 
@@ -106,25 +111,25 @@ int main(int argc, char** argv)
 
 
 			    // Display image and depth using cv:Mat which share sl:Mat data
-			    zed.retrieveImage(image_zed, VIEW::LEFT, MEM::CPU, new_image_size);
-			    cv::imshow("Image", image_ocv);
+//			    zed.retrieveImage(image_zed, VIEW::LEFT, MEM::CPU, new_image_size);
+//			    cv::imshow("Image", image_zed);
 
 			
-			    // Handle key event
-			    //std::cout<<pt.x<<'\t'<<pt.y<<std::endl; 
+//			     Handle key event
+//			    std::cout<<pt.x<<'\t'<<pt.y<<std::endl; 
 			    
-			    //processKeyEvent(zed, key);
-				if(key=='b'){
 
-					zed.retrieveImage(image_zed, VIEW::LEFT, MEM::CPU, new_image_size);	   
-					result.copyTo(after);
+//				if(key=='b'){
 
-					cv::imshow("before",before);
-					cv::imshow("after",after);
-					imageSubtract(before,after);
-					after.copyTo(before);
-				        pub_chess.publish(str_chess_position);		
-				}
+//					zed.retrieveImage(image_zed, VIEW::LEFT, MEM::CPU, new_image_size);	   
+//					result.copyTo(after);
+
+//					cv::imshow("before",before);
+//					cv::imshow("after",after);
+//					imageSubtract(before,after);
+//					after.copyTo(before);
+//				        pub_chess.publish(str_chess_position);		
+//				}
 
 			}
 
@@ -140,7 +145,35 @@ int main(int argc, char** argv)
 
 	return 0;
 }
+void chatterCallback(const std_msgs::String::ConstPtr& msg)
+{
+	// Prepare new image size to retrieve half-resolution images
+	Resolution image_size = zed.getCameraInformation().camera_resolution;
+	int new_width = image_size.width / 2;
+	int new_height = image_size.height / 2;
 
+	Resolution new_image_size(new_width, new_height);
+
+	// To share data between sl::Mat and cv::Mat, use slMat2cvMat()
+	// Only the headers and pointer to the sl::Mat are copied, not the data itself
+	Mat image_zed(new_width, new_height, MAT_TYPE::U8_C4);
+	cv::Mat image_ocv = slMat2cvMat(image_zed);
+	cv::Rect rect(301,9,165,169);
+	cv::Mat result=image_ocv(rect);
+//	cv::Mat result=image_ocv;
+	zed.retrieveImage(image_zed, VIEW::LEFT, MEM::CPU, new_image_size);
+	ROS_INFO("I heard: [%s]", msg->data.c_str());
+	if(state){
+		imageSubtract(before,result);		
+		state=0;
+	}
+	else{
+		result.copyTo(before);
+		cv::imshow("before",before);
+		state=1;
+	}
+	
+}
 // Mapping between MAT_TYPE and CV_TYPE
 int getOCVtype(sl::MAT_TYPE type) {
     int cv_type = -1;

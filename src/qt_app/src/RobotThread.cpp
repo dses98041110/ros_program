@@ -74,12 +74,13 @@ void RobotThread::run()
     }//do ros things.
 }
 
-void RobotThread::pubPose(int current_position,int target_position){
+void RobotThread::pubPose(int current_position,int target_position,int category){
     QMutex * pMutex = new QMutex();
     pMutex->lock();
     ss.str("");
     ss<<(char)(65+7-(current_position%8));
     ss<<(char)(49+(current_position/8));
+    ss<<category;
     ss<<1;
     
     str_chess_position.data=ss.str();
@@ -91,6 +92,7 @@ void RobotThread::pubPose(int current_position,int target_position){
     ss.str("");
     ss<<(char)(65+7-(target_position%8));
     ss<<(char)(49+(target_position/8));
+    ss<<category;
     ss<<0;
     
     str_chess_position.data=ss.str();

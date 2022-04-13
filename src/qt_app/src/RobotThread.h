@@ -26,7 +26,7 @@ public:
     bool init();
 
     void poseCallback(const std_msgs::String::ConstPtr& msg);
-    void pubPose(int current_position,int target_position);
+    void pubPose(int current_position,int target_position,int category);
 
     Q_SLOT void run();
     Q_SIGNAL void newPose(int,int,int,int);

@@ -1267,6 +1267,7 @@ int Game::minimax(int pieceInSquare[64], int target_position,int alpha,int beta,
 void Game::blackMove(int current_position,int target_position){
     pieceToMove=collection[7-(current_position>>3)][7-(current_position%8)]->currentPiece;
     	qDebug()<<"GetCategory:"<<pieceToMove->getCategory();
+	m_RobotThread.pubPose(current_position,target_position,(pieceToMove->getCategory())*(-1)-1);
     ChessBox* targetBox=collection[7-(target_position>>3)][7-(target_position%8)];
     if(targetBox->getHasChessPiece()){
         targetBox->currentPiece->setIsPlaced(false);
@@ -1393,7 +1394,7 @@ void Game::updatePoseDisplay(int x1,int y1,int x2,int y2){
         blackMove(bestPiece,bestMove);
         bitBoardUpdate(&chess_position,bestPiece,bestMove);
 
-	m_RobotThread.pubPose(bestPiece,bestMove);
+
 }
 
 
