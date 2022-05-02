@@ -51,10 +51,14 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = main.cpp \
-		mainwindow.cpp moc_mainwindow.cpp
+		mainwindow.cpp \
+		RobotThread.cpp moc_mainwindow.cpp \
+		moc_RobotThread.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
-		moc_mainwindow.o
+		RobotThread.o \
+		moc_mainwindow.o \
+		moc_RobotThread.o
 DIST          = /usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -143,8 +147,10 @@ DIST          = /usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/exceptions.prf \
 		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/lex.prf \
-		qt_gui.pro mainwindow.h main.cpp \
-		mainwindow.cpp
+		qt_gui.pro mainwindow.h \
+		RobotThread.h main.cpp \
+		mainwindow.cpp \
+		RobotThread.cpp
 QMAKE_TARGET  = qt_gui
 DESTDIR       = 
 TARGET        = qt_gui
@@ -356,8 +362,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp mainwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.h RobotThread.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp mainwindow.cpp RobotThread.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui $(DISTDIR)/
 
 
@@ -390,9 +396,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++11 -Wall -W -dM -E -o moc_predefs.h /usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_RobotThread.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_RobotThread.cpp
 moc_mainwindow.cpp: /opt/ros/melodic/include/ros/ros.h \
 		/opt/ros/melodic/include/ros/time.h \
 		/opt/ros/melodic/include/ros/platform.h \
@@ -450,10 +456,86 @@ moc_mainwindow.cpp: /opt/ros/melodic/include/ros/ros.h \
 		/opt/ros/melodic/include/ros/this_node.h \
 		/opt/ros/melodic/include/ros/param.h \
 		/opt/ros/melodic/include/ros/topic.h \
+		/opt/ros/melodic/include/std_msgs/String.h \
+		/opt/ros/melodic/include/ros/message_operations.h \
 		mainwindow.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yu/catkin_ws/src/qt_gui/src -I/opt/ros/melodic/include -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/aarch64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/aarch64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/aarch64-linux-gnu/7/include-fixed -I/usr/include/aarch64-linux-gnu -I/usr/include mainwindow.h -o moc_mainwindow.cpp
+
+moc_RobotThread.cpp: /opt/ros/melodic/include/ros/ros.h \
+		/opt/ros/melodic/include/ros/time.h \
+		/opt/ros/melodic/include/ros/platform.h \
+		/opt/ros/melodic/include/ros/exception.h \
+		/opt/ros/melodic/include/ros/duration.h \
+		/opt/ros/melodic/include/ros/rostime_decl.h \
+		/opt/ros/melodic/include/ros/macros.h \
+		/opt/ros/melodic/include/ros/rate.h \
+		/opt/ros/melodic/include/ros/console.h \
+		/opt/ros/melodic/include/ros/console_backend.h \
+		/opt/ros/melodic/include/rosconsole/macros_generated.h \
+		/opt/ros/melodic/include/ros/assert.h \
+		/opt/ros/melodic/include/ros/static_assert.h \
+		/opt/ros/melodic/include/ros/common.h \
+		/opt/ros/melodic/include/ros/forwards.h \
+		/opt/ros/melodic/include/ros/exceptions.h \
+		/opt/ros/melodic/include/ros/datatypes.h \
+		/opt/ros/melodic/include/ros/serialized_message.h \
+		/opt/ros/melodic/include/ros/roscpp_serialization_macros.h \
+		/opt/ros/melodic/include/ros/types.h \
+		/opt/ros/melodic/include/ros/node_handle.h \
+		/opt/ros/melodic/include/ros/publisher.h \
+		/opt/ros/melodic/include/ros/message.h \
+		/opt/ros/melodic/include/ros/serialization.h \
+		/opt/ros/melodic/include/ros/message_traits.h \
+		/opt/ros/melodic/include/ros/message_forward.h \
+		/opt/ros/melodic/include/ros/builtin_message_traits.h \
+		/opt/ros/melodic/include/ros/subscriber.h \
+		/opt/ros/melodic/include/ros/subscription_callback_helper.h \
+		/opt/ros/melodic/include/ros/parameter_adapter.h \
+		/opt/ros/melodic/include/ros/message_event.h \
+		/opt/ros/melodic/include/ros/service_server.h \
+		/opt/ros/melodic/include/ros/service_client.h \
+		/opt/ros/melodic/include/ros/service_traits.h \
+		/opt/ros/melodic/include/ros/timer.h \
+		/opt/ros/melodic/include/ros/timer_options.h \
+		/opt/ros/melodic/include/ros/wall_timer.h \
+		/opt/ros/melodic/include/ros/wall_timer_options.h \
+		/opt/ros/melodic/include/ros/steady_timer.h \
+		/opt/ros/melodic/include/ros/steady_timer_options.h \
+		/opt/ros/melodic/include/ros/advertise_options.h \
+		/opt/ros/melodic/include/ros/advertise_service_options.h \
+		/opt/ros/melodic/include/ros/service_callback_helper.h \
+		/opt/ros/melodic/include/ros/subscribe_options.h \
+		/opt/ros/melodic/include/ros/transport_hints.h \
+		/opt/ros/melodic/include/ros/service_client_options.h \
+		/opt/ros/melodic/include/ros/spinner.h \
+		/opt/ros/melodic/include/ros/init.h \
+		/opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h \
+		/opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h \
+		/opt/ros/melodic/include/ros/single_subscriber_publisher.h \
+		/opt/ros/melodic/include/ros/service.h \
+		/opt/ros/melodic/include/ros/names.h \
+		/opt/ros/melodic/include/ros/master.h \
+		/opt/ros/melodic/include/ros/this_node.h \
+		/opt/ros/melodic/include/ros/param.h \
+		/opt/ros/melodic/include/ros/topic.h \
+		/opt/ros/melodic/include/ros/network.h \
+		/opt/ros/melodic/include/geometry_msgs/Twist.h \
+		/opt/ros/melodic/include/ros/message_operations.h \
+		/opt/ros/melodic/include/geometry_msgs/Vector3.h \
+		/opt/ros/melodic/include/nav_msgs/Odometry.h \
+		/opt/ros/melodic/include/std_msgs/Header.h \
+		/opt/ros/melodic/include/geometry_msgs/PoseWithCovariance.h \
+		/opt/ros/melodic/include/geometry_msgs/Pose.h \
+		/opt/ros/melodic/include/geometry_msgs/Point.h \
+		/opt/ros/melodic/include/geometry_msgs/Quaternion.h \
+		/opt/ros/melodic/include/geometry_msgs/TwistWithCovariance.h \
+		/opt/ros/melodic/include/std_msgs/String.h \
+		RobotThread.h \
+		moc_predefs.h \
+		/usr/lib/qt5/bin/moc
+	/usr/lib/qt5/bin/moc $(DEFINES) --include ./moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/yu/catkin_ws/src/qt_gui/src -I/opt/ros/melodic/include -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I/usr/include/c++/7 -I/usr/include/aarch64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/aarch64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/aarch64-linux-gnu/7/include-fixed -I/usr/include/aarch64-linux-gnu -I/usr/include RobotThread.h -o moc_RobotThread.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -531,7 +613,9 @@ main.o: main.cpp mainwindow.h \
 		/opt/ros/melodic/include/ros/master.h \
 		/opt/ros/melodic/include/ros/this_node.h \
 		/opt/ros/melodic/include/ros/param.h \
-		/opt/ros/melodic/include/ros/topic.h
+		/opt/ros/melodic/include/ros/topic.h \
+		/opt/ros/melodic/include/std_msgs/String.h \
+		/opt/ros/melodic/include/ros/message_operations.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 mainwindow.o: mainwindow.cpp mainwindow.h \
@@ -592,11 +676,88 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		/opt/ros/melodic/include/ros/this_node.h \
 		/opt/ros/melodic/include/ros/param.h \
 		/opt/ros/melodic/include/ros/topic.h \
+		/opt/ros/melodic/include/std_msgs/String.h \
+		/opt/ros/melodic/include/ros/message_operations.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
 
+RobotThread.o: RobotThread.cpp RobotThread.h \
+		/opt/ros/melodic/include/ros/ros.h \
+		/opt/ros/melodic/include/ros/time.h \
+		/opt/ros/melodic/include/ros/platform.h \
+		/opt/ros/melodic/include/ros/exception.h \
+		/opt/ros/melodic/include/ros/duration.h \
+		/opt/ros/melodic/include/ros/rostime_decl.h \
+		/opt/ros/melodic/include/ros/macros.h \
+		/opt/ros/melodic/include/ros/rate.h \
+		/opt/ros/melodic/include/ros/console.h \
+		/opt/ros/melodic/include/ros/console_backend.h \
+		/opt/ros/melodic/include/rosconsole/macros_generated.h \
+		/opt/ros/melodic/include/ros/assert.h \
+		/opt/ros/melodic/include/ros/static_assert.h \
+		/opt/ros/melodic/include/ros/common.h \
+		/opt/ros/melodic/include/ros/forwards.h \
+		/opt/ros/melodic/include/ros/exceptions.h \
+		/opt/ros/melodic/include/ros/datatypes.h \
+		/opt/ros/melodic/include/ros/serialized_message.h \
+		/opt/ros/melodic/include/ros/roscpp_serialization_macros.h \
+		/opt/ros/melodic/include/ros/types.h \
+		/opt/ros/melodic/include/ros/node_handle.h \
+		/opt/ros/melodic/include/ros/publisher.h \
+		/opt/ros/melodic/include/ros/message.h \
+		/opt/ros/melodic/include/ros/serialization.h \
+		/opt/ros/melodic/include/ros/message_traits.h \
+		/opt/ros/melodic/include/ros/message_forward.h \
+		/opt/ros/melodic/include/ros/builtin_message_traits.h \
+		/opt/ros/melodic/include/ros/subscriber.h \
+		/opt/ros/melodic/include/ros/subscription_callback_helper.h \
+		/opt/ros/melodic/include/ros/parameter_adapter.h \
+		/opt/ros/melodic/include/ros/message_event.h \
+		/opt/ros/melodic/include/ros/service_server.h \
+		/opt/ros/melodic/include/ros/service_client.h \
+		/opt/ros/melodic/include/ros/service_traits.h \
+		/opt/ros/melodic/include/ros/timer.h \
+		/opt/ros/melodic/include/ros/timer_options.h \
+		/opt/ros/melodic/include/ros/wall_timer.h \
+		/opt/ros/melodic/include/ros/wall_timer_options.h \
+		/opt/ros/melodic/include/ros/steady_timer.h \
+		/opt/ros/melodic/include/ros/steady_timer_options.h \
+		/opt/ros/melodic/include/ros/advertise_options.h \
+		/opt/ros/melodic/include/ros/advertise_service_options.h \
+		/opt/ros/melodic/include/ros/service_callback_helper.h \
+		/opt/ros/melodic/include/ros/subscribe_options.h \
+		/opt/ros/melodic/include/ros/transport_hints.h \
+		/opt/ros/melodic/include/ros/service_client_options.h \
+		/opt/ros/melodic/include/ros/spinner.h \
+		/opt/ros/melodic/include/ros/init.h \
+		/opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h \
+		/opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h \
+		/opt/ros/melodic/include/ros/single_subscriber_publisher.h \
+		/opt/ros/melodic/include/ros/service.h \
+		/opt/ros/melodic/include/ros/names.h \
+		/opt/ros/melodic/include/ros/master.h \
+		/opt/ros/melodic/include/ros/this_node.h \
+		/opt/ros/melodic/include/ros/param.h \
+		/opt/ros/melodic/include/ros/topic.h \
+		/opt/ros/melodic/include/ros/network.h \
+		/opt/ros/melodic/include/geometry_msgs/Twist.h \
+		/opt/ros/melodic/include/ros/message_operations.h \
+		/opt/ros/melodic/include/geometry_msgs/Vector3.h \
+		/opt/ros/melodic/include/nav_msgs/Odometry.h \
+		/opt/ros/melodic/include/std_msgs/Header.h \
+		/opt/ros/melodic/include/geometry_msgs/PoseWithCovariance.h \
+		/opt/ros/melodic/include/geometry_msgs/Pose.h \
+		/opt/ros/melodic/include/geometry_msgs/Point.h \
+		/opt/ros/melodic/include/geometry_msgs/Quaternion.h \
+		/opt/ros/melodic/include/geometry_msgs/TwistWithCovariance.h \
+		/opt/ros/melodic/include/std_msgs/String.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o RobotThread.o RobotThread.cpp
+
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
+
+moc_RobotThread.o: moc_RobotThread.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_RobotThread.o moc_RobotThread.cpp
 
 ####### Install
 

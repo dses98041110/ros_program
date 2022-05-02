@@ -105,33 +105,9 @@ qt_gui/CMakeFiles/qt_gui_node.dir/src/main.cpp.o.provides: qt_gui/CMakeFiles/qt_
 qt_gui/CMakeFiles/qt_gui_node.dir/src/main.cpp.o.provides.build: qt_gui/CMakeFiles/qt_gui_node.dir/src/main.cpp.o
 
 
-qt_gui/CMakeFiles/qt_gui_node.dir/src/RobotThread.cpp.o: qt_gui/CMakeFiles/qt_gui_node.dir/flags.make
-qt_gui/CMakeFiles/qt_gui_node.dir/src/RobotThread.cpp.o: /home/yu/catkin_ws/src/qt_gui/src/RobotThread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yu/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object qt_gui/CMakeFiles/qt_gui_node.dir/src/RobotThread.cpp.o"
-	cd /home/yu/catkin_ws/build/qt_gui && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qt_gui_node.dir/src/RobotThread.cpp.o -c /home/yu/catkin_ws/src/qt_gui/src/RobotThread.cpp
-
-qt_gui/CMakeFiles/qt_gui_node.dir/src/RobotThread.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/qt_gui_node.dir/src/RobotThread.cpp.i"
-	cd /home/yu/catkin_ws/build/qt_gui && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yu/catkin_ws/src/qt_gui/src/RobotThread.cpp > CMakeFiles/qt_gui_node.dir/src/RobotThread.cpp.i
-
-qt_gui/CMakeFiles/qt_gui_node.dir/src/RobotThread.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/qt_gui_node.dir/src/RobotThread.cpp.s"
-	cd /home/yu/catkin_ws/build/qt_gui && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yu/catkin_ws/src/qt_gui/src/RobotThread.cpp -o CMakeFiles/qt_gui_node.dir/src/RobotThread.cpp.s
-
-qt_gui/CMakeFiles/qt_gui_node.dir/src/RobotThread.cpp.o.requires:
-
-.PHONY : qt_gui/CMakeFiles/qt_gui_node.dir/src/RobotThread.cpp.o.requires
-
-qt_gui/CMakeFiles/qt_gui_node.dir/src/RobotThread.cpp.o.provides: qt_gui/CMakeFiles/qt_gui_node.dir/src/RobotThread.cpp.o.requires
-	$(MAKE) -f qt_gui/CMakeFiles/qt_gui_node.dir/build.make qt_gui/CMakeFiles/qt_gui_node.dir/src/RobotThread.cpp.o.provides.build
-.PHONY : qt_gui/CMakeFiles/qt_gui_node.dir/src/RobotThread.cpp.o.provides
-
-qt_gui/CMakeFiles/qt_gui_node.dir/src/RobotThread.cpp.o.provides.build: qt_gui/CMakeFiles/qt_gui_node.dir/src/RobotThread.cpp.o
-
-
 qt_gui/CMakeFiles/qt_gui_node.dir/qt_gui_node_autogen/mocs_compilation.cpp.o: qt_gui/CMakeFiles/qt_gui_node.dir/flags.make
 qt_gui/CMakeFiles/qt_gui_node.dir/qt_gui_node_autogen/mocs_compilation.cpp.o: qt_gui/qt_gui_node_autogen/mocs_compilation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yu/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object qt_gui/CMakeFiles/qt_gui_node.dir/qt_gui_node_autogen/mocs_compilation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yu/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object qt_gui/CMakeFiles/qt_gui_node.dir/qt_gui_node_autogen/mocs_compilation.cpp.o"
 	cd /home/yu/catkin_ws/build/qt_gui && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qt_gui_node.dir/qt_gui_node_autogen/mocs_compilation.cpp.o -c /home/yu/catkin_ws/build/qt_gui/qt_gui_node_autogen/mocs_compilation.cpp
 
 qt_gui/CMakeFiles/qt_gui_node.dir/qt_gui_node_autogen/mocs_compilation.cpp.i: cmake_force
@@ -157,7 +133,6 @@ qt_gui/CMakeFiles/qt_gui_node.dir/qt_gui_node_autogen/mocs_compilation.cpp.o.pro
 qt_gui_node_OBJECTS = \
 "CMakeFiles/qt_gui_node.dir/src/mainwindow.cpp.o" \
 "CMakeFiles/qt_gui_node.dir/src/main.cpp.o" \
-"CMakeFiles/qt_gui_node.dir/src/RobotThread.cpp.o" \
 "CMakeFiles/qt_gui_node.dir/qt_gui_node_autogen/mocs_compilation.cpp.o"
 
 # External object files for target qt_gui_node
@@ -165,7 +140,6 @@ qt_gui_node_EXTERNAL_OBJECTS =
 
 /home/yu/catkin_ws/devel/lib/qt_gui/qt_gui_node: qt_gui/CMakeFiles/qt_gui_node.dir/src/mainwindow.cpp.o
 /home/yu/catkin_ws/devel/lib/qt_gui/qt_gui_node: qt_gui/CMakeFiles/qt_gui_node.dir/src/main.cpp.o
-/home/yu/catkin_ws/devel/lib/qt_gui/qt_gui_node: qt_gui/CMakeFiles/qt_gui_node.dir/src/RobotThread.cpp.o
 /home/yu/catkin_ws/devel/lib/qt_gui/qt_gui_node: qt_gui/CMakeFiles/qt_gui_node.dir/qt_gui_node_autogen/mocs_compilation.cpp.o
 /home/yu/catkin_ws/devel/lib/qt_gui/qt_gui_node: qt_gui/CMakeFiles/qt_gui_node.dir/build.make
 /home/yu/catkin_ws/devel/lib/qt_gui/qt_gui_node: /opt/ros/melodic/lib/libroscpp.so
@@ -190,7 +164,7 @@ qt_gui_node_EXTERNAL_OBJECTS =
 /home/yu/catkin_ws/devel/lib/qt_gui/qt_gui_node: /usr/lib/aarch64-linux-gnu/libQt5Gui.so.5.9.5
 /home/yu/catkin_ws/devel/lib/qt_gui/qt_gui_node: /usr/lib/aarch64-linux-gnu/libQt5Core.so.5.9.5
 /home/yu/catkin_ws/devel/lib/qt_gui/qt_gui_node: qt_gui/CMakeFiles/qt_gui_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yu/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable /home/yu/catkin_ws/devel/lib/qt_gui/qt_gui_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yu/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable /home/yu/catkin_ws/devel/lib/qt_gui/qt_gui_node"
 	cd /home/yu/catkin_ws/build/qt_gui && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/qt_gui_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -200,7 +174,6 @@ qt_gui/CMakeFiles/qt_gui_node.dir/build: /home/yu/catkin_ws/devel/lib/qt_gui/qt_
 
 qt_gui/CMakeFiles/qt_gui_node.dir/requires: qt_gui/CMakeFiles/qt_gui_node.dir/src/mainwindow.cpp.o.requires
 qt_gui/CMakeFiles/qt_gui_node.dir/requires: qt_gui/CMakeFiles/qt_gui_node.dir/src/main.cpp.o.requires
-qt_gui/CMakeFiles/qt_gui_node.dir/requires: qt_gui/CMakeFiles/qt_gui_node.dir/src/RobotThread.cpp.o.requires
 qt_gui/CMakeFiles/qt_gui_node.dir/requires: qt_gui/CMakeFiles/qt_gui_node.dir/qt_gui_node_autogen/mocs_compilation.cpp.o.requires
 
 .PHONY : qt_gui/CMakeFiles/qt_gui_node.dir/requires

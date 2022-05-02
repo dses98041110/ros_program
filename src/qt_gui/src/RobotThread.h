@@ -19,14 +19,14 @@
 class RobotThread : public QObject {
 	Q_OBJECT
 public:
-    RobotThread(int argc, char **pArgv, const char * topic  = "chess_position");
+    RobotThread(int argc, char **pArgv, const char * topic  = "ros_gui");
     virtual ~RobotThread();
 
 
     bool init();
 
     void poseCallback(const std_msgs::String::ConstPtr& msg);
-    void pubPose(int current_position,int target_position);
+    void pubPose();
 
     Q_SLOT void run();
     Q_SIGNAL void newPose(int,int,int,int);

@@ -24,7 +24,6 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(SOURCES
 	src/mainwindow.cpp
 	src/main.cpp
-	src/RobotThread.cpp
 )
 
 set(FORMS

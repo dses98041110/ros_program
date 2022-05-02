@@ -22,6 +22,7 @@ Game::Game(QWidget *parent ):QGraphicsView(parent),m_RobotThread(0, 0,"chess_pos
 //    qDebug()<<bin<<(bool)!(0&0x80)<<(bool)!(4&0x80)<<(bool)!(-4&0x80);
     pieceToMove = NULL;
     connect(&m_RobotThread,&RobotThread::newPose,this,&Game::updatePoseDisplay);
+    connect(&m_RobotThread,&RobotThread::closeGUI,this,&Game::closeDisplay);
     m_RobotThread.init();
     //test
 
@@ -1397,4 +1398,6 @@ void Game::updatePoseDisplay(int x1,int y1,int x2,int y2){
 
 }
 
-
+void Game::closeDisplay(){
+    close();
+}

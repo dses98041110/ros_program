@@ -25,6 +25,8 @@
 // OpenCV dep
 #include <opencv2/cvconfig.h>
 #include <opencv2/core/hal/interface.h>
+#include <opencv2/video/background_segm.hpp>
+#include <opencv2/core/cvstd_wrapper.hpp>
 
 
 
@@ -47,13 +49,15 @@ Camera zed;
 int state=0;
 cv::Mat before;
 cv::Mat after;
+
+ros::Publisher pub_chess;
+ros::Subscriber sub;
 int main(int argc, char** argv)
 {
 		ros::init(argc, argv, "image_publisher");
 		ros::NodeHandle nh;
-		ros::Publisher pub_chess = nh.advertise<std_msgs::String>("chess_position", 5);  
-		ros::Subscriber sub = nh.subscribe("chatter", 1000, chatterCallback);
-
+		pub_chess = nh.advertise<std_msgs::String>("chess_position", 5); 
+		sub = nh.subscribe("chatter", 1000, chatterCallback);
 
 		// Create a ZED camera object
 
@@ -95,9 +99,9 @@ int main(int argc, char** argv)
 
 		// Loop until 'q' is pressed
 		char key = ' ';
-		cv::Point2i pt(-1,-1);//assume initial point
-		cv::namedWindow("Image");
-		cv::setMouseCallback("Image", onMouse, (void*)&pt);
+//		cv::Point2i pt(-1,-1);//assume initial point
+//		cv::namedWindow("Image");
+//		cv::setMouseCallback("Image", onMouse, (void*)&pt);
 //		zed.grab(runtime_parameters);
 //		zed.retrieveImage(image_zed, VIEW::LEFT, MEM::CPU, new_image_size);
 
@@ -110,14 +114,14 @@ int main(int argc, char** argv)
 			if (zed.grab(runtime_parameters) == ERROR_CODE::SUCCESS) {		  
 
 
-			    // Display image and depth using cv:Mat which share sl:Mat data
+//			    // Display image and depth using cv:Mat which share sl:Mat data
 //			    zed.retrieveImage(image_zed, VIEW::LEFT, MEM::CPU, new_image_size);
-//			    cv::imshow("Image", image_zed);
+//			    cv::imshow("Image", image_ocv);
 
-			
-//			     Handle key event
+//			
+//////			     Handle key event
 //			    std::cout<<pt.x<<'\t'<<pt.y<<std::endl; 
-			    
+//			    
 
 //				if(key=='b'){
 
@@ -128,7 +132,7 @@ int main(int argc, char** argv)
 //					cv::imshow("after",after);
 //					imageSubtract(before,after);
 //					after.copyTo(before);
-//				        pub_chess.publish(str_chess_position);		
+//				        		
 //				}
 
 			}
@@ -158,13 +162,15 @@ void chatterCallback(const std_msgs::String::ConstPtr& msg)
 	// Only the headers and pointer to the sl::Mat are copied, not the data itself
 	Mat image_zed(new_width, new_height, MAT_TYPE::U8_C4);
 	cv::Mat image_ocv = slMat2cvMat(image_zed);
-	cv::Rect rect(301,9,165,169);
+	cv::Rect rect(290,0,190,185);
 	cv::Mat result=image_ocv(rect);
 //	cv::Mat result=image_ocv;
 	zed.retrieveImage(image_zed, VIEW::LEFT, MEM::CPU, new_image_size);
 	ROS_INFO("I heard: [%s]", msg->data.c_str());
 	if(state){
-		imageSubtract(before,result);		
+		cv::imshow("after",result);
+		imageSubtract(before,result);	
+		pub_chess.publish(str_chess_position);
 		state=0;
 	}
 	else{
@@ -235,42 +241,68 @@ void imageSubtract(cv::Mat &image1, cv::Mat &image2)
 	ss.str("");
 	ss.clear();
 
-	cv::Mat image1_gary, image2_gary;
+	cv::Mat image1_gary, image2_gary,image1_equal,image2_equal;
+
 	if (image1.channels() != 1)
 	{
 		cv::cvtColor(image1, image1_gary, cv::COLOR_BGR2GRAY);
+    		GaussianBlur(image1_gary, image1_gary, cv::Size(3,3), 0);
+	
+
 	}
 	if (image2.channels() != 1)
 	{
+
 		cv::cvtColor(image2, image2_gary, cv::COLOR_BGR2GRAY);
+    		GaussianBlur(image2_gary, image2_gary, cv::Size(3,3), 0);
 	}
 
 	cv::Mat frameDifference, absFrameDifferece;
-	cv::Mat previousGrayFrame = image2_gary.clone();
-	//图1减图2
-	cv::subtract(image1_gary, image2_gary, frameDifference, cv::Mat(), CV_16SC1);
-	//cv::imshow("frameDifference", frameDifference);
-	//取绝对值
-	absFrameDifferece = cv::abs(frameDifference);
-	//位深的改变
-	absFrameDifferece.convertTo(absFrameDifferece, CV_8UC1, 1, 0);
-	//cv::imshow("absFrameDifferece", absFrameDifferece);
+
+
+//	//图1减图2
+//	cv::subtract(image1_gary, image2_gary, frameDifference, cv::Mat(), CV_16SC1);
+//	cv::imshow("frameDifference", frameDifference);
+//	//取绝对值
+//	absFrameDifferece = cv::abs(frameDifference);
+
+//	//位深的改变
+//	absFrameDifferece.convertTo(absFrameDifferece, CV_8UC1, 1, 0);
+//	cv::imshow("subtract", absFrameDifferece);
+
+    	absdiff(image1_gary, image2_gary, absFrameDifferece);
+
+	cv::imshow("diff", absFrameDifferece);
+
+
 	cv::Mat segmentation;
-	
-	//阈值处理（这一步很关键，要调好二值化的值）
-	cv::threshold(absFrameDifferece, segmentation,50, 255, cv::THRESH_BINARY);
-	//中值滤波
-	cv::medianBlur(segmentation, segmentation, 3);
+//	
+//	//阈值处理（这一步很关键，要调好二值化的值）
+	cv::threshold(absFrameDifferece, segmentation,35, 255, cv::THRESH_BINARY);
+//	cv::adaptiveThreshold( absFrameDifferece,segmentation, 255, cv::ADAPTIVE_THRESH_GAUSSIAN_C, cv::THRESH_BINARY, 3, 0);
 
-	//形态学处理(开闭运算)
-	//形态学处理用到的算子
-	cv::Mat morphologyKernel = getStructuringElement(cv::MORPH_RECT, cv::Size(3, 3), cv::Point(-1, -1));
-	cv::morphologyEx(segmentation, segmentation, cv::MORPH_CLOSE, morphologyKernel, cv::Point(-1, -1), 2, cv::BORDER_REPLICATE);
+//	//中值滤波
 
-	//显示二值化图片
-	//cv::imshow("segmentation", segmentation);
 
-	//找边界
+	cv::imshow("threshold", segmentation);
+
+
+//	//形态学处理(开闭运算)
+//	//形态学处理用到的算子
+	cv::Mat morphologyKernel;
+	morphologyKernel = getStructuringElement(cv::MORPH_RECT, cv::Size(3,3), cv::Point(-1, -1));
+	erode(segmentation, segmentation,morphologyKernel,cv::Point(-1, -1), 2);
+	cv::imshow("erode", segmentation);
+
+	morphologyKernel = getStructuringElement(cv::MORPH_RECT, cv::Size(3,3), cv::Point(-1, -1));
+	dilate(segmentation, segmentation,morphologyKernel,cv::Point(-1, -1), 1);
+	cv::imshow("dilate", segmentation);
+//	cv::morphologyEx(segmentation, segmentation, cv::MORPH_OPEN, morphologyKernel, cv::Point(-1, -1), 1, cv::BORDER_REPLICATE);
+//	cv::imshow("morphologyEx", segmentation);
+////	//显示二值化图片
+
+
+////	//找边界
 	std::vector< std::vector<cv::Point> > contours;
 	std::vector<cv::Vec4i> hierarchy;
 	cv::findContours(segmentation, contours, hierarchy, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE, cv::Point(0, 0));//CV_RETR_TREE
@@ -284,6 +316,12 @@ void imageSubtract(cv::Mat &image1, cv::Mat &image2)
 	image1.copyTo(move);
 	for (int index = 0; index < contours.size(); index++)
 	{
+		  int area = contourArea(contours[index]);
+		  std::cout << area << std::endl;
+		if(area<50||area>300){
+			continue;
+		}
+
 
 		//cv::approxPolyDP(cv::Mat(contours[index]), contours_poly[index], 3, true);
 		//cv::Rect rect = cv::boundingRect(cv::Mat(contours_poly[index]));
@@ -291,15 +329,15 @@ void imageSubtract(cv::Mat &image1, cv::Mat &image2)
 		mu[index]=cv::moments(contours[index],false);
 		mc[index] = cv::Point2f(mu[index].m10 / mu[index].m00, mu[index].m01 / mu[index].m00);
 		int range;
-		for(range=25;range<=200;range+=25){
+		for(range=20;range<=165;range+=20){
 			if(mc[index].y<=range){
-				ss<<(char)(73-(range/25));
+				ss<<(char)(73-(range/20));
 				break;
 			}
 		}
-		for(range=25;range<=200;range+=25){
+		for(range=20;range<=165;range+=20){
 			if(mc[index].x<=range){
-				ss<<(char)(57-(range/25));
+				ss<<(char)(57-(range/20));
 				break;
 			}
 		}

@@ -72,6 +72,7 @@ void RobotThread::run()
         delete pMutex;
 	
     }//do ros things.
+    Q_EMIT closeGUI();
 }
 
 void RobotThread::pubPose(int current_position,int target_position,int category){

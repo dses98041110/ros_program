@@ -449,33 +449,6 @@ qt_gui_node_autogen/mocs_compilation.cpp.s:
 	cd /home/yu/catkin_ws/build && $(MAKE) -f qt_gui/CMakeFiles/qt_gui_node.dir/build.make qt_gui/CMakeFiles/qt_gui_node.dir/qt_gui_node_autogen/mocs_compilation.cpp.s
 .PHONY : qt_gui_node_autogen/mocs_compilation.cpp.s
 
-src/RobotThread.o: src/RobotThread.cpp.o
-
-.PHONY : src/RobotThread.o
-
-# target to build an object file
-src/RobotThread.cpp.o:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f qt_gui/CMakeFiles/qt_gui_node.dir/build.make qt_gui/CMakeFiles/qt_gui_node.dir/src/RobotThread.cpp.o
-.PHONY : src/RobotThread.cpp.o
-
-src/RobotThread.i: src/RobotThread.cpp.i
-
-.PHONY : src/RobotThread.i
-
-# target to preprocess a source file
-src/RobotThread.cpp.i:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f qt_gui/CMakeFiles/qt_gui_node.dir/build.make qt_gui/CMakeFiles/qt_gui_node.dir/src/RobotThread.cpp.i
-.PHONY : src/RobotThread.cpp.i
-
-src/RobotThread.s: src/RobotThread.cpp.s
-
-.PHONY : src/RobotThread.s
-
-# target to generate assembly for a file
-src/RobotThread.cpp.s:
-	cd /home/yu/catkin_ws/build && $(MAKE) -f qt_gui/CMakeFiles/qt_gui_node.dir/build.make qt_gui/CMakeFiles/qt_gui_node.dir/src/RobotThread.cpp.s
-.PHONY : src/RobotThread.cpp.s
-
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -563,9 +536,6 @@ help:
 	@echo "... qt_gui_node_autogen/mocs_compilation.o"
 	@echo "... qt_gui_node_autogen/mocs_compilation.i"
 	@echo "... qt_gui_node_autogen/mocs_compilation.s"
-	@echo "... src/RobotThread.o"
-	@echo "... src/RobotThread.i"
-	@echo "... src/RobotThread.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

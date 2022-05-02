@@ -26,9 +26,10 @@
  */
 
 // %Tag(FULLTEXT)%
+#include <iostream>
 #include "ros/ros.h"
 #include "std_msgs/String.h"
-
+#include <signal.h>
 /**
  * This tutorial demonstrates simple receipt of messages over the ROS system.
  */
@@ -38,7 +39,10 @@ void chatterCallback(const std_msgs::String::ConstPtr& msg)
   ROS_INFO("I heard: [%s]", msg->data.c_str());
 }
 // %EndTag(CALLBACK)%
-
+void mySigintHandler(int sig){
+  std::cout<<"shutdown";
+  ros::shutdown();
+}
 int main(int argc, char **argv)
 {
   /**
@@ -51,7 +55,7 @@ int main(int argc, char **argv)
    * You must call one of the versions of ros::init() before using any other
    * part of the ROS system.
    */
-  ros::init(argc, argv, "listener");
+  ros::init(argc, argv, "listener", ros::init_options::NoSigintHandler);
 
   /**
    * NodeHandle is the main access point to communications with the ROS system.
@@ -59,7 +63,7 @@ int main(int argc, char **argv)
    * NodeHandle destructed will close down the node.
    */
   ros::NodeHandle n;
-
+  signal(SIGINT, mySigintHandler);
   /**
    * The subscribe() call is how you tell ROS that you want to receive messages
    * on a given topic.  This invokes a call to the ROS

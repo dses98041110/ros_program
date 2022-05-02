@@ -69,7 +69,8 @@ class Game:public QGraphicsView
 public:
     //Constructors
     Game(QWidget *parent = 0);
-    Q_SLOT void updatePoseDisplay(int x1,int y1,int x2,int y2);
+    Q_SLOT void updatePoseDisplay(int x1,int y1,int x2,int y2); 
+    Q_SLOT void closeDisplay();  
     ChessPiece *pieceToMove;
     ChessBox *collection[8][8];
     CHESS_POSITION chess_position;

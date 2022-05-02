@@ -30,7 +30,7 @@ public:
 
     Q_SLOT void run();
     Q_SIGNAL void newPose(int,int,int,int);
-
+    Q_SIGNAL void closeGUI();
 private:
     int m_Init_argc;
     char** m_pInit_argv;

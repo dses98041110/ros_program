@@ -7,7 +7,7 @@ set(AM_CMAKE_CURRENT_SOURCE_DIR "/home/yu/catkin_ws/src/qt_gui/")
 set(AM_CMAKE_CURRENT_BINARY_DIR "/home/yu/catkin_ws/build/qt_gui/")
 set(AM_CMAKE_INCLUDE_DIRECTORIES_PROJECT_BEFORE "")
 set(AM_BUILD_DIR "/home/yu/catkin_ws/build/qt_gui/qt_gui_node_autogen")
-set(AM_SOURCES "/home/yu/catkin_ws/src/qt_gui/src/RobotThread.cpp;/home/yu/catkin_ws/src/qt_gui/src/main.cpp;/home/yu/catkin_ws/src/qt_gui/src/mainwindow.cpp")
+set(AM_SOURCES "/home/yu/catkin_ws/src/qt_gui/src/main.cpp;/home/yu/catkin_ws/src/qt_gui/src/mainwindow.cpp")
 set(AM_HEADERS "")
 # Qt environment
 set(AM_QT_VERSION_MAJOR "5")

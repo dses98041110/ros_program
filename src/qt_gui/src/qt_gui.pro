@@ -12,10 +12,12 @@ INCLUDEPATH+=/opt/ros/melodic/include
 LIBS+= -L/opt/ros/melodic/lib
 
 SOURCES += main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    RobotThread.cpp
 
 FORMS += \
     mainwindow.ui
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    RobotThread.h

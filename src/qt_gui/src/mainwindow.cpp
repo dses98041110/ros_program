@@ -4,9 +4,9 @@
 
 MainWindow::MainWindow(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::MainWindow),
-    m_RobotThread(0, 0,"ros_gui")
+    ui(new Ui::MainWindow)
 {
+    
     ui->setupUi(this);
 
 }
@@ -36,5 +36,33 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::on_pushButton_4_clicked()
 {
+	std_msgs::String msg;
+	std::stringstream ss;
+	ss<<"ok";
+	msg.data=ss.str();
+	chatter_pub.publish(msg);
+}
 
+void MainWindow::on_pushButton_5_clicked()
+{
+    system("gnome-terminal -- rosnode kill chess_game");
+}
+
+void MainWindow::on_pushButton_6_clicked()
+{
+    system("gnome-terminal -- rosnode kill --all");	
+    close();
+}
+
+void MainWindow::on_pushButton_7_clicked()
+{
+    //disconnect
+    system("gnome-terminal -- rosnode kill planned_path_subscriber robot_state_publisher");
+
+}
+
+void MainWindow::on_pushButton_8_clicked()
+{
+    //camera
+    system("gnome-terminal -- rosnode kill image_publisher");
 }

@@ -118,7 +118,7 @@ CATKIN_SKIP_TESTING:BOOL=OFF
 CATKIN_SYMLINK_INSTALL:BOOL=OFF
 
 //List of ';' separated packages to build
-CATKIN_WHITELIST_PACKAGES:STRING=minibot_control
+CATKIN_WHITELIST_PACKAGES:STRING=opencv_zed_ros
 
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
@@ -797,7 +797,7 @@ kdl_parser_DIR:PATH=/opt/ros/melodic/share/kdl_parser/cmake
 laser_geometry_DIR:PATH=/opt/ros/melodic/share/laser_geometry/cmake
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/melodic/lib/libtf2.so
+lib:FILEPATH=/opt/ros/melodic/lib/libbondcpp.so
 
 //The directory containing a CMake configuration file for map_msgs.
 map_msgs_DIR:PATH=/opt/ros/melodic/share/map_msgs/cmake
@@ -1165,6 +1165,8 @@ zed_wrapper_SOURCE_DIR:STATIC=/home/yu/catkin_ws/src/zed-ros-wrapper/zed_wrapper
 BLAS_goto2_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: BLAS_openblas_LIBRARY
 BLAS_openblas_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: BLAS_openblas_WORKS
+BLAS_openblas_WORKS-ADVANCED:INTERNAL=1
 //Have function sgemm_
 BLAS_openblas_WORKS:INTERNAL=1
 //ADVANCED property for variable: Boost_ATOMIC_LIBRARY_DEBUG

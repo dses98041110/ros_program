@@ -33,7 +33,7 @@ bool RobotThread::init()
     ros::NodeHandle nh;
 
     sub_chess = nh.subscribe(m_topic, 10, &RobotThread::poseCallback, this);
-    pub_chess_group=nh.advertise<std_msgs::String>("chess_position_to_joint_position", 10);
+    pub_chess_group=nh.advertise<std_msgs::String>("chatter", 10);
     m_pThread->start();
     return true;
 }//set up the thread
@@ -74,30 +74,11 @@ void RobotThread::run()
     }//do ros things.
 }
 
-void RobotThread::pubPose(int current_position,int target_position){
+void RobotThread::pubPose(){
     QMutex * pMutex = new QMutex();
     pMutex->lock();
-    ss.str("");
-    ss<<(char)(65+7-(current_position%8));
-    ss<<(char)(49+(current_position/8));
-    ss<<1;
-    
-    str_chess_position.data=ss.str();
-    ROS_INFO("pubPose: [%s]", str_chess_position.data.c_str());
-    ss.str("");
-    ss.clear();
-    pub_chess_group.publish(str_chess_position);
+    pub_chess_group.publish("placePiece");
 
-    ss.str("");
-    ss<<(char)(65+7-(target_position%8));
-    ss<<(char)(49+(target_position/8));
-    ss<<0;
-    
-    str_chess_position.data=ss.str();
-    ROS_INFO("pubPose: [%s]", str_chess_position.data.c_str());
-    ss.str("");
-    ss.clear();
-    pub_chess_group.publish(str_chess_position);
     pMutex->unlock();
 
     delete pMutex;

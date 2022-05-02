@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_RobotThread_t {
-    QByteArrayData data[4];
-    char stringdata0[25];
+    QByteArrayData data[5];
+    char stringdata0[34];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,10 +34,11 @@ static const qt_meta_stringdata_RobotThread_t qt_meta_stringdata_RobotThread = {
 QT_MOC_LITERAL(0, 0, 11), // "RobotThread"
 QT_MOC_LITERAL(1, 12, 7), // "newPose"
 QT_MOC_LITERAL(2, 20, 0), // ""
-QT_MOC_LITERAL(3, 21, 3) // "run"
+QT_MOC_LITERAL(3, 21, 8), // "closeGUI"
+QT_MOC_LITERAL(4, 30, 3) // "run"
 
     },
-    "RobotThread\0newPose\0\0run"
+    "RobotThread\0newPose\0\0closeGUI\0run"
 };
 #undef QT_MOC_LITERAL
 
@@ -47,21 +48,23 @@ static const uint qt_meta_data_RobotThread[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       3,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       1,       // signalCount
+       2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    4,   24,    2, 0x06 /* Public */,
+       1,    4,   29,    2, 0x06 /* Public */,
+       3,    0,   38,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,   33,    2, 0x0a /* Public */,
+       4,    0,   39,    2, 0x0a /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int,    2,    2,    2,    2,
+    QMetaType::Void,
 
  // slots: parameters
     QMetaType::Void,
@@ -76,7 +79,8 @@ void RobotThread::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->newPose((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4]))); break;
-        case 1: _t->run(); break;
+        case 1: _t->closeGUI(); break;
+        case 2: _t->run(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -85,6 +89,13 @@ void RobotThread::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
             typedef void (RobotThread::*_t)(int , int , int , int );
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&RobotThread::newPose)) {
                 *result = 0;
+                return;
+            }
+        }
+        {
+            typedef void (RobotThread::*_t)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&RobotThread::closeGUI)) {
+                *result = 1;
                 return;
             }
         }
@@ -116,13 +127,13 @@ int RobotThread::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 3;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 3)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 2;
+        _id -= 3;
     }
     return _id;
 }
@@ -132,6 +143,12 @@ void RobotThread::newPose(int _t1, int _t2, int _t3, int _t4)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)), const_cast<void*>(reinterpret_cast<const void*>(&_t3)), const_cast<void*>(reinterpret_cast<const void*>(&_t4)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
+}
+
+// SIGNAL 1
+void RobotThread::closeGUI()
+{
+    QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

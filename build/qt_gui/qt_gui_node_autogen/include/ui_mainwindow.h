@@ -26,12 +26,16 @@ public:
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
+    QPushButton *pushButton_5;
+    QPushButton *pushButton_6;
+    QPushButton *pushButton_8;
+    QPushButton *pushButton_7;
 
     void setupUi(QWidget *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(400, 300);
+        MainWindow->resize(400, 338);
         pushButton = new QPushButton(MainWindow);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(130, 40, 89, 25));
@@ -44,6 +48,18 @@ public:
         pushButton_4 = new QPushButton(MainWindow);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
         pushButton_4->setGeometry(QRect(130, 230, 89, 25));
+        pushButton_5 = new QPushButton(MainWindow);
+        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        pushButton_5->setGeometry(QRect(240, 160, 89, 25));
+        pushButton_6 = new QPushButton(MainWindow);
+        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
+        pushButton_6->setGeometry(QRect(130, 290, 89, 25));
+        pushButton_8 = new QPushButton(MainWindow);
+        pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
+        pushButton_8->setGeometry(QRect(240, 100, 89, 25));
+        pushButton_7 = new QPushButton(MainWindow);
+        pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
+        pushButton_7->setGeometry(QRect(240, 40, 89, 25));
 
         retranslateUi(MainWindow);
 
@@ -57,6 +73,10 @@ public:
         pushButton_2->setText(QApplication::translate("MainWindow", "start game", Q_NULLPTR));
         pushButton_3->setText(QApplication::translate("MainWindow", "open camera", Q_NULLPTR));
         pushButton_4->setText(QApplication::translate("MainWindow", "place piece", Q_NULLPTR));
+        pushButton_5->setText(QApplication::translate("MainWindow", "close game", Q_NULLPTR));
+        pushButton_6->setText(QApplication::translate("MainWindow", "quite", Q_NULLPTR));
+        pushButton_8->setText(QApplication::translate("MainWindow", "close camera", Q_NULLPTR));
+        pushButton_7->setText(QApplication::translate("MainWindow", "disConnect", Q_NULLPTR));
     } // retranslateUi
 
 };
