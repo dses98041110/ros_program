@@ -325,20 +325,24 @@ void imageSubtract(cv::Mat &image1, cv::Mat &image2)
 
 		mu[index]=cv::moments(contours[index],false);
 		mc[index] = cv::Point2f(mu[index].m10 / mu[index].m00, mu[index].m01 / mu[index].m00);
-		ss<<(char)(73-(mc[index].y/20));
-		ss<<(char)(57-(mc[index].x/20));
-		str_chess_position.data=ss.str();
-//		if(map_chess_position.count(ss.str())==0){
-//			cv::circle(move, mc[index], 4, cv::Scalar(0, 255, 0), -1, 8, 0);
-//			str_chess_position.data=ss.str();
-//		}
+
+		std::string temp_str="";
+		temp_str+=(char)(73-(mc[index].y/20))+(char)(57-(mc[index].x/20));
+
+		if(map_chess_position.count(temp_str)==0){
+			ss<<(char)(73-(mc[index].y/20));
+			ss<<(char)(57-(mc[index].x/20));
+			cv::circle(move, mc[index], 4, cv::Scalar(0, 255, 0), -1, 8, 0);
+			str_chess_position.data=ss.str();
+		}
 	
 
 
 	}
         ROS_INFO("%s", str_chess_position.data.c_str()); 
 	cv::imshow("move", move);
-
+	map_chess_position.clear();
+	ss.str("");
 
 }
 
