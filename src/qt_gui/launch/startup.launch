@@ -1,0 +1,3 @@
+<launch>
+	<node name="qt_gui_node" pkg="qt_gui" type="qt_gui_node" launch-prefix="gnome-terminal -x" />
+</launch>

@@ -5,7 +5,7 @@ using namespace std;
 
 int main(int argc,char *argv[])
 {
-    cout << "Hello World!" << endl;
+    system("gnome-terminal -- bash -c 'roscroe'&");
     ros::init(argc, argv, "ros_gui");
     QApplication a(argc, argv);
 

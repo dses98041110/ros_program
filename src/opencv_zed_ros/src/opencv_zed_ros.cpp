@@ -45,6 +45,8 @@ void chatterCallback(const std_msgs::String::ConstPtr& msg);
 
 std_msgs::String str_chess_position;
 std::stringstream ss;
+std::map<std::string,int> map_chess_position;
+
 Camera zed;
 int state=0;
 cv::Mat before;
@@ -67,7 +69,7 @@ int main(int argc, char** argv)
 		init_params.camera_resolution = RESOLUTION::HD720;
 		init_params.depth_mode = DEPTH_MODE::ULTRA;
 		init_params.coordinate_units = UNIT::METER;
-		if (argc > 1) init_params.input.setFromSVOFile(argv[1]);
+//		if (argc > 1) init_params.input.setFromSVOFile(argv[1]);
 
 		// Open the camera
 		ERROR_CODE err = zed.open(init_params);
@@ -94,14 +96,13 @@ int main(int argc, char** argv)
 		// Only the headers and pointer to the sl::Mat are copied, not the data itself
 		Mat image_zed(new_width, new_height, MAT_TYPE::U8_C4);
 		cv::Mat image_ocv = slMat2cvMat(image_zed);
-		cv::Rect rect(260,50,200,200);
+		cv::Rect rect(419,11,166,166);
 		cv::Mat result=image_ocv(rect);
 
 		// Loop until 'q' is pressed
 		char key = ' ';
-//		cv::Point2i pt(-1,-1);//assume initial point
-//		cv::namedWindow("Image");
-//		cv::setMouseCallback("Image", onMouse, (void*)&pt);
+		cv::Point2i pt(-1,-1);//assume initial point
+
 //		zed.grab(runtime_parameters);
 //		zed.retrieveImage(image_zed, VIEW::LEFT, MEM::CPU, new_image_size);
 
@@ -116,11 +117,12 @@ int main(int argc, char** argv)
 
 //			    // Display image and depth using cv:Mat which share sl:Mat data
 //			    zed.retrieveImage(image_zed, VIEW::LEFT, MEM::CPU, new_image_size);
+//			    cv::namedWindow("Image");
+//			    cv::setMouseCallback("Image", onMouse, (void*)&pt);
 //			    cv::imshow("Image", image_ocv);
 
-//			
-//////			     Handle key event
-//			    std::cout<<pt.x<<'\t'<<pt.y<<std::endl; 
+
+
 //			    
 
 //				if(key=='b'){
@@ -162,7 +164,7 @@ void chatterCallback(const std_msgs::String::ConstPtr& msg)
 	// Only the headers and pointer to the sl::Mat are copied, not the data itself
 	Mat image_zed(new_width, new_height, MAT_TYPE::U8_C4);
 	cv::Mat image_ocv = slMat2cvMat(image_zed);
-	cv::Rect rect(290,0,190,185);
+	cv::Rect rect(299,11,166,166);
 	cv::Mat result=image_ocv(rect);
 //	cv::Mat result=image_ocv;
 	zed.retrieveImage(image_zed, VIEW::LEFT, MEM::CPU, new_image_size);
@@ -233,14 +235,12 @@ void printHelp() {
         cv::Point* ptPtr = (cv::Point*)param;
         ptPtr->x = x;
         ptPtr->y = y;
+	std::cout<<x<<'\t'<<y<<std::endl; 	
     }
 }
 
 void imageSubtract(cv::Mat &image1, cv::Mat &image2)
 {
-	ss.str("");
-	ss.clear();
-
 	cv::Mat image1_gary, image2_gary,image1_equal,image2_equal;
 
 	if (image1.channels() != 1)
@@ -316,36 +316,29 @@ void imageSubtract(cv::Mat &image1, cv::Mat &image2)
 	image1.copyTo(move);
 	for (int index = 0; index < contours.size(); index++)
 	{
-		  int area = contourArea(contours[index]);
-		  std::cout << area << std::endl;
+
+		int area = contourArea(contours[index]);
+		std::cout << area << std::endl;
 		if(area<50||area>300){
 			continue;
 		}
 
-
-		//cv::approxPolyDP(cv::Mat(contours[index]), contours_poly[index], 3, true);
-		//cv::Rect rect = cv::boundingRect(cv::Mat(contours_poly[index]));
-		//cv::rectangle(image2, rect, cv::Scalar(0, 255, 0), 2);
 		mu[index]=cv::moments(contours[index],false);
 		mc[index] = cv::Point2f(mu[index].m10 / mu[index].m00, mu[index].m01 / mu[index].m00);
-		int range;
-		for(range=20;range<=165;range+=20){
-			if(mc[index].y<=range){
-				ss<<(char)(73-(range/20));
-				break;
-			}
-		}
-		for(range=20;range<=165;range+=20){
-			if(mc[index].x<=range){
-				ss<<(char)(57-(range/20));
-				break;
-			}
-		}
-		cv::circle(move, mc[index], 4, cv::Scalar(0, 255, 0), -1, 8, 0);
+		ss<<(char)(73-(mc[index].y/20));
+		ss<<(char)(57-(mc[index].x/20));
 		str_chess_position.data=ss.str();
+//		if(map_chess_position.count(ss.str())==0){
+//			cv::circle(move, mc[index], 4, cv::Scalar(0, 255, 0), -1, 8, 0);
+//			str_chess_position.data=ss.str();
+//		}
+	
+
 
 	}
         ROS_INFO("%s", str_chess_position.data.c_str()); 
 	cv::imshow("move", move);
+
+
 }
 

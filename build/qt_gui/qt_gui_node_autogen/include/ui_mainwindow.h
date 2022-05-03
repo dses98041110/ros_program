@@ -35,31 +35,34 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(400, 338);
+        MainWindow->resize(639, 268);
         pushButton = new QPushButton(MainWindow);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(130, 40, 89, 25));
+        pushButton->setGeometry(QRect(390, 30, 89, 25));
         pushButton_2 = new QPushButton(MainWindow);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(130, 160, 89, 25));
+        pushButton_2->setGeometry(QRect(390, 150, 89, 25));
         pushButton_3 = new QPushButton(MainWindow);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(130, 100, 89, 25));
+        pushButton_3->setGeometry(QRect(390, 90, 89, 25));
         pushButton_4 = new QPushButton(MainWindow);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        pushButton_4->setGeometry(QRect(130, 230, 89, 25));
+        pushButton_4->setGeometry(QRect(20, 20, 311, 221));
+        QFont font;
+        font.setPointSize(25);
+        pushButton_4->setFont(font);
         pushButton_5 = new QPushButton(MainWindow);
         pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
-        pushButton_5->setGeometry(QRect(240, 160, 89, 25));
+        pushButton_5->setGeometry(QRect(500, 150, 89, 25));
         pushButton_6 = new QPushButton(MainWindow);
         pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
-        pushButton_6->setGeometry(QRect(130, 290, 89, 25));
+        pushButton_6->setGeometry(QRect(500, 220, 89, 25));
         pushButton_8 = new QPushButton(MainWindow);
         pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
-        pushButton_8->setGeometry(QRect(240, 100, 89, 25));
+        pushButton_8->setGeometry(QRect(500, 90, 89, 25));
         pushButton_7 = new QPushButton(MainWindow);
         pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
-        pushButton_7->setGeometry(QRect(240, 40, 89, 25));
+        pushButton_7->setGeometry(QRect(500, 30, 89, 25));
 
         retranslateUi(MainWindow);
 
@@ -76,7 +79,7 @@ public:
         pushButton_5->setText(QApplication::translate("MainWindow", "close game", Q_NULLPTR));
         pushButton_6->setText(QApplication::translate("MainWindow", "quite", Q_NULLPTR));
         pushButton_8->setText(QApplication::translate("MainWindow", "close camera", Q_NULLPTR));
-        pushButton_7->setText(QApplication::translate("MainWindow", "disConnect", Q_NULLPTR));
+        pushButton_7->setText(QApplication::translate("MainWindow", "disconnect", Q_NULLPTR));
     } // retranslateUi
 
 };
