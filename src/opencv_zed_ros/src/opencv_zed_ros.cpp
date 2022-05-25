@@ -59,7 +59,7 @@ int main(int argc, char** argv)
 		ros::init(argc, argv, "image_publisher");
 		ros::NodeHandle nh;
 		pub_chess = nh.advertise<std_msgs::String>("chess_position", 5); 
-		sub = nh.subscribe("chatter", 1000, chatterCallback);
+		sub = nh.subscribe("zed_take_picture", 1000, chatterCallback);
 
 		// Create a ZED camera object
 
@@ -272,7 +272,7 @@ void imageSubtract(cv::Mat &image1, cv::Mat &image2)
 
     	absdiff(image1_gary, image2_gary, absFrameDifferece);
 
-	cv::imshow("diff", absFrameDifferece);
+//	cv::imshow("diff", absFrameDifferece);
 
 
 	cv::Mat segmentation;
@@ -284,7 +284,7 @@ void imageSubtract(cv::Mat &image1, cv::Mat &image2)
 //	//中值滤波
 
 
-	cv::imshow("threshold", segmentation);
+//	cv::imshow("threshold", segmentation);
 
 
 //	//形态学处理(开闭运算)
@@ -292,11 +292,11 @@ void imageSubtract(cv::Mat &image1, cv::Mat &image2)
 	cv::Mat morphologyKernel;
 	morphologyKernel = getStructuringElement(cv::MORPH_RECT, cv::Size(3,3), cv::Point(-1, -1));
 	erode(segmentation, segmentation,morphologyKernel,cv::Point(-1, -1), 2);
-	cv::imshow("erode", segmentation);
+//	cv::imshow("erode", segmentation);
 
 	morphologyKernel = getStructuringElement(cv::MORPH_RECT, cv::Size(3,3), cv::Point(-1, -1));
 	dilate(segmentation, segmentation,morphologyKernel,cv::Point(-1, -1), 1);
-	cv::imshow("dilate", segmentation);
+//	cv::imshow("dilate", segmentation);
 //	cv::morphologyEx(segmentation, segmentation, cv::MORPH_OPEN, morphologyKernel, cv::Point(-1, -1), 1, cv::BORDER_REPLICATE);
 //	cv::imshow("morphologyEx", segmentation);
 ////	//显示二值化图片
@@ -319,7 +319,7 @@ void imageSubtract(cv::Mat &image1, cv::Mat &image2)
 
 		int area = contourArea(contours[index]);
 		std::cout << area << std::endl;
-		if(area<50||area>300){
+		if(area<40||area>300){
 			continue;
 		}
 

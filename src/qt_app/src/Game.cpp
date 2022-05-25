@@ -1268,15 +1268,15 @@ int Game::minimax(int pieceInSquare[64], int target_position,int alpha,int beta,
 void Game::blackMove(int current_position,int target_position){
     pieceToMove=collection[7-(current_position>>3)][7-(current_position%8)]->currentPiece;
     qDebug()<<"GetCategory:"<<pieceToMove->getCategory();
-    m_RobotThread.pubPose(current_position,target_position,(pieceToMove->getCategory())*(-1)-1);
+
     ChessBox* targetBox=collection[7-(target_position>>3)][7-(target_position%8)];
     if(targetBox->getHasChessPiece()){
-//    m_RobotThread.pubPose(target_position,65,(pieceToMove->getCategory())-1);
+    m_RobotThread.pubPose(target_position,65,(targetBox->currentPiece->getCategory())-1);
         targetBox->currentPiece->setIsPlaced(false);
         targetBox->currentPiece->setCurrentBox(NULL);
         removeFromScene(targetBox->currentPiece);
     }
-
+    m_RobotThread.pubPose(current_position,target_position,(pieceToMove->getCategory())*(-1)-1);
    pieceToMove->getCurrentBox()->setHasChessPiece(false);
        pieceToMove->getCurrentBox()->currentPiece = NULL;
         pieceToMove->getCurrentBox()->resetOriginalColor();

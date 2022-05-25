@@ -40,7 +40,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     ros::NodeHandle n;
-    ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
+    ros::Publisher chatter_pub = n.advertise<std_msgs::String>("zed_take_picture", 1000);
 };
 
 #endif // MAINWINDOW_H

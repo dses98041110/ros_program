@@ -60,6 +60,7 @@ public:
         pushButton_8 = new QPushButton(MainWindow);
         pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
         pushButton_8->setGeometry(QRect(500, 90, 89, 25));
+        pushButton_8->setAutoRepeat(true);
         pushButton_7 = new QPushButton(MainWindow);
         pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
         pushButton_7->setGeometry(QRect(500, 30, 89, 25));
@@ -72,14 +73,14 @@ public:
     void retranslateUi(QWidget *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Form", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("MainWindow", "Connect", Q_NULLPTR));
-        pushButton_2->setText(QApplication::translate("MainWindow", "start game", Q_NULLPTR));
-        pushButton_3->setText(QApplication::translate("MainWindow", "open camera", Q_NULLPTR));
-        pushButton_4->setText(QApplication::translate("MainWindow", "place piece", Q_NULLPTR));
-        pushButton_5->setText(QApplication::translate("MainWindow", "close game", Q_NULLPTR));
-        pushButton_6->setText(QApplication::translate("MainWindow", "quite", Q_NULLPTR));
-        pushButton_8->setText(QApplication::translate("MainWindow", "close camera", Q_NULLPTR));
-        pushButton_7->setText(QApplication::translate("MainWindow", "disconnect", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("MainWindow", "\351\200\243\347\267\232", Q_NULLPTR));
+        pushButton_2->setText(QApplication::translate("MainWindow", "\351\226\213\345\247\213\351\201\212\346\210\262", Q_NULLPTR));
+        pushButton_3->setText(QApplication::translate("MainWindow", "\351\226\213\345\225\237\347\233\270\346\251\237", Q_NULLPTR));
+        pushButton_4->setText(QApplication::translate("MainWindow", "\346\213\215\347\205\247", Q_NULLPTR));
+        pushButton_5->setText(QApplication::translate("MainWindow", "\347\265\220\346\235\237\351\201\212\346\210\262", Q_NULLPTR));
+        pushButton_6->setText(QApplication::translate("MainWindow", "\351\233\242\351\226\213", Q_NULLPTR));
+        pushButton_8->setText(QApplication::translate("MainWindow", "\351\227\234\351\226\211\347\233\270\346\251\237", Q_NULLPTR));
+        pushButton_7->setText(QApplication::translate("MainWindow", "\346\226\267\351\226\213\351\200\243\347\265\220", Q_NULLPTR));
     } // retranslateUi
 
 };

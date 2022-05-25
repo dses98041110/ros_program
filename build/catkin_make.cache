@@ -1,2 +1,2 @@
-opencv_zed_ros
--DCATKIN_DEVEL_PREFIX=/home/yu/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/yu/catkin_ws/install -DCATKIN_WHITELIST_PACKAGES=opencv_zed_ros -G Unix Makefiles
+RCClientForROS/subscriber_mini_bot
+-DCATKIN_DEVEL_PREFIX=/home/yu/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/yu/catkin_ws/install -DCATKIN_WHITELIST_PACKAGES=subscriber_mini_bot -G Unix Makefiles

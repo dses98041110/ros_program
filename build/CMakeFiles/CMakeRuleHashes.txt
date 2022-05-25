@@ -1,4 +1,7 @@
 # Hashes of file build rules.
+f751dce5c59d0f8aacf1c58b3df4cfa3 /home/yu/catkin_ws/devel/include/aruco_msgs/Marker.h
+ec330b74266dfe2c307d5de520961b63 /home/yu/catkin_ws/devel/include/aruco_msgs/MarkerArray.h
+539db38558167d2b3ce580aa4bbc0434 /home/yu/catkin_ws/devel/include/aruco_ros/ArucoThresholdConfig.h
 4351c58775bf041a9a7a1497d0ead672 /home/yu/catkin_ws/devel/include/easy_handeye_msgs/CheckStartingPose.h
 6c9f2873f79c5da40afdb90fc991ae2d /home/yu/catkin_ws/devel/include/easy_handeye_msgs/ComputeCalibration.h
 84f1906c7b353cfa5551b297130b3bb2 /home/yu/catkin_ws/devel/include/easy_handeye_msgs/EnumerateTargetPoses.h
@@ -112,6 +115,9 @@ ebe64a251b57882636faca4fdde4b91d /home/yu/catkin_ws/devel/include/zed_interfaces
 7c671438114a3f3769754fafe05c94f2 /home/yu/catkin_ws/devel/include/zed_interfaces/stop_svo_recording.h
 ab0e9f8d2d762a81ffe164a432c5eb81 /home/yu/catkin_ws/devel/include/zed_interfaces/toggle_led.h
 481fd6320fc2d2666deb91cec21c58e7 /home/yu/catkin_ws/devel/include/zed_nodelets/ZedConfig.h
+be95eb031a297c327e1de63d457237a2 /home/yu/catkin_ws/devel/lib/python2.7/dist-packages/aruco_msgs/msg/_Marker.py
+49290df3242533aef7b9cb004953c03d /home/yu/catkin_ws/devel/lib/python2.7/dist-packages/aruco_msgs/msg/_MarkerArray.py
+c29a8e1d4df787155c6353d77ba53ec0 /home/yu/catkin_ws/devel/lib/python2.7/dist-packages/aruco_msgs/msg/__init__.py
 c93279e907989e80500c75992897180c /home/yu/catkin_ws/devel/lib/python2.7/dist-packages/easy_handeye_msgs/msg/_HandeyeCalibration.py
 239c3863aba869ed7b0cd320e0aa8720 /home/yu/catkin_ws/devel/lib/python2.7/dist-packages/easy_handeye_msgs/msg/_SampleList.py
 8a5665ef91445053ad66bdea4388576d /home/yu/catkin_ws/devel/lib/python2.7/dist-packages/easy_handeye_msgs/msg/_TargetPoseList.py
@@ -233,6 +239,8 @@ c9436a71dca2445a4416d0f771872746 /home/yu/catkin_ws/devel/lib/python2.7/dist-pac
 aa5aa6d78b8b782de4db1d16ba3b47cc /home/yu/catkin_ws/devel/lib/python2.7/dist-packages/zed_interfaces/srv/_stop_remote_stream.py
 d9eb1e0334c884d41f51c770775ccf93 /home/yu/catkin_ws/devel/lib/python2.7/dist-packages/zed_interfaces/srv/_stop_svo_recording.py
 f9013c8541c913a457ef977763be810f /home/yu/catkin_ws/devel/lib/python2.7/dist-packages/zed_interfaces/srv/_toggle_led.py
+78bca061658e2413e202c2dcbf2bd38a /home/yu/catkin_ws/devel/share/common-lisp/ros/aruco_msgs/msg/Marker.lisp
+86c74d9ce467ff7e23767b7fe9fb0ad3 /home/yu/catkin_ws/devel/share/common-lisp/ros/aruco_msgs/msg/MarkerArray.lisp
 1a5b6a2c73344dab12ab444521f96533 /home/yu/catkin_ws/devel/share/common-lisp/ros/easy_handeye_msgs/msg/HandeyeCalibration.lisp
 0b074193eaf2a11dd8df1f26ab667e23 /home/yu/catkin_ws/devel/share/common-lisp/ros/easy_handeye_msgs/msg/SampleList.lisp
 384be094438076c6f398363b2655be8b /home/yu/catkin_ws/devel/share/common-lisp/ros/easy_handeye_msgs/msg/TargetPoseList.lisp
@@ -342,6 +350,8 @@ d09dee4204ed7d602d59e6ca449a29cd /home/yu/catkin_ws/devel/share/common-lisp/ros/
 d417f0b2746e0009e64cb3aac5e8e9aa /home/yu/catkin_ws/devel/share/common-lisp/ros/zed_interfaces/srv/stop_remote_stream.lisp
 cd015b3645bd102569aa100b13ef4795 /home/yu/catkin_ws/devel/share/common-lisp/ros/zed_interfaces/srv/stop_svo_recording.lisp
 5dea8eb670907f64e7c203e6758165b5 /home/yu/catkin_ws/devel/share/common-lisp/ros/zed_interfaces/srv/toggle_led.lisp
+96848ccb7d3f9e5546045c7c266dea7d /home/yu/catkin_ws/devel/share/gennodejs/ros/aruco_msgs/msg/Marker.js
+3bbc1aeff7378f8c7c48ae855e07ed2e /home/yu/catkin_ws/devel/share/gennodejs/ros/aruco_msgs/msg/MarkerArray.js
 9f7235bd61d7c7877e3c5bedb9873d2e /home/yu/catkin_ws/devel/share/gennodejs/ros/easy_handeye_msgs/msg/HandeyeCalibration.js
 788f1ba91e949fa6fd6f3fa86d8c2980 /home/yu/catkin_ws/devel/share/gennodejs/ros/easy_handeye_msgs/msg/SampleList.js
 eafc2d52dd32efa64642a1dce36120c0 /home/yu/catkin_ws/devel/share/gennodejs/ros/easy_handeye_msgs/msg/TargetPoseList.js
@@ -451,6 +461,9 @@ beb0689d43026c06f4697df29adc08ce /home/yu/catkin_ws/devel/share/gennodejs/ros/ze
 87d73ac2d0e721a524af626763afb837 /home/yu/catkin_ws/devel/share/gennodejs/ros/zed_interfaces/srv/stop_remote_stream.js
 fdf9c33cc87f9168f64276d794c793d2 /home/yu/catkin_ws/devel/share/gennodejs/ros/zed_interfaces/srv/stop_svo_recording.js
 fbacf926bd630e8c3316b144acf121de /home/yu/catkin_ws/devel/share/gennodejs/ros/zed_interfaces/srv/toggle_led.js
+0b1c039f1761006a0d2a414771b468f7 /home/yu/catkin_ws/devel/share/roseus/ros/aruco_msgs/manifest.l
+e0f26626e73e32e5f6caee27ef14b1d6 /home/yu/catkin_ws/devel/share/roseus/ros/aruco_msgs/msg/Marker.l
+4eac57b839c22e9c8b9e3d179d2b37fb /home/yu/catkin_ws/devel/share/roseus/ros/aruco_msgs/msg/MarkerArray.l
 0cd1a482972022e8f0e90d4d41164b0a /home/yu/catkin_ws/devel/share/roseus/ros/easy_handeye_msgs/manifest.l
 248e4d2369fa9df60034f0a09699ee50 /home/yu/catkin_ws/devel/share/roseus/ros/easy_handeye_msgs/msg/HandeyeCalibration.l
 0d3cb592db047dde271ae57e77f7069b /home/yu/catkin_ws/devel/share/roseus/ros/easy_handeye_msgs/msg/SampleList.l

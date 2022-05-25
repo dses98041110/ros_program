@@ -91,8 +91,15 @@ void RobotThread::pubPose(int current_position,int target_position,int category)
     pub_chess_group.publish(str_chess_position);
 
     ss.str("");
-    ss<<(char)(65+7-(target_position%8));
-    ss<<(char)(49+(target_position/8));
+    if(target_position==65){
+      ss<<(char)(73);
+      ss<<(char)(50);
+    }
+    else{
+      ss<<(char)(65+7-(target_position%8));
+      ss<<(char)(49+(target_position/8));
+    }
+
     ss<<category;
     ss<<0;
     
